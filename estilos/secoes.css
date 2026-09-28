@@ -326,13 +326,13 @@
   text-wrap: balance;
 }
 
-/* ---------- 6. Relatos (prints) ---------- */
+/* ---------- 6. Resultados (antes e depois) ---------- */
 
-/* No celular: deslizar para o lado. No computador: 3 colunas. */
-.relatos {
+/* No celular: deslizar para o lado. No computador: grade de 3 colunas. */
+.resultados {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 80%;
+  grid-auto-columns: 86%;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -342,43 +342,30 @@
   scrollbar-width: thin;
 }
 
-.relato {
+.resultado {
   scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 16px 16px 24px;
+  margin: 0;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-bloco);
+  padding: 12px;
 }
 
-.relato__print,
-.relato__img {
-  aspect-ratio: 9 / 16;
+.resultado img {
   width: 100%;
   max-width: 100%;
-}
-.relato__img {
   height: auto;
-  object-fit: cover;
-  object-position: top;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: var(--marfim);
   border-radius: var(--raio-pequeno);
-  background: var(--areia);
 }
-
-.relato__frase {
-  margin: 0;
-  padding: 0 4px;
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.35;
-}
-
-.relato__rotulo { margin: 0; padding: 0 4px; color: var(--cacau-suave); }
 
 @media (min-width: 640px) {
-  .relatos { grid-auto-columns: 45%; }
+  .resultados { grid-auto-columns: 46%; }
 }
 @media (min-width: 960px) {
-  .relatos {
+  .resultados {
     grid-auto-flow: row;
     grid-template-columns: repeat(3, 1fr);
     overflow: visible;

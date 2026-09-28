@@ -62,19 +62,22 @@ Para colocar uma foto em outro lugar, use esta linha no `index.html`:
 <img class="foto-real" src="imagens/nome-da-foto.webp" alt="descrição da foto" width="800" height="1200" loading="lazy">
 ```
 
-### Prints dos relatos
+### Fotos de resultados (antes e depois)
 
-1. Tire o print (de preferência na vertical) e converta para WebP no [squoosh.app](https://squoosh.app), com **600 px de largura**.
-2. Salve em `imagens/` como `relato-1.webp`, `relato-2.webp` e `relato-3.webp`.
-3. No `index.html`, procure `[Print: relato real 1` e troque a linha inteira da `<div class="foto relato__print" ...>...</div>` por:
+Ficam na pasta `imagens/resultados/`, em WebP, com no máximo 1000 px no lado maior.
+
+- **Trocar uma foto:** salve a nova com o mesmo nome (por exemplo, `resultado-03.webp`) e substitua o arquivo.
+- **Acrescentar uma foto:** salve como `resultado-11.webp` e, no `index.html`, logo antes da linha `</div>` que fecha a seção "Resultados que queremos que vocês alcancem", acrescente:
 
 ```html
-<img class="relato__img" src="imagens/relato-1.webp" alt="Print de mensagem de uma aluna" width="600" height="1067" loading="lazy">
+<figure class="resultado">
+  <img src="imagens/resultados/resultado-11.webp" alt="Antes e depois de uma paciente da Rafaela" width="1000" height="1000" loading="lazy" decoding="async">
+</figure>
 ```
 
-4. Logo abaixo, troque `[frase curta do relato 1]` por uma frase do próprio relato e `[rótulo: ex. Paciente da Rafaela]` por quem é a pessoa.
+- **Tirar uma foto:** apague o bloco `<figure class="resultado">…</figure>` dela e o arquivo na pasta.
 
-Use só prints com autorização da pessoa e, se precisar, esconda nome e foto dela.
+Use só fotos com autorização por escrito da paciente. Esconda nome, data e rosto quando ela pedir.
 
 ## 4. Como testar os três estados
 
