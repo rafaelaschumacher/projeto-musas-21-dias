@@ -303,6 +303,25 @@
 .passo .card__titulo { margin: 0; }
 .passo .card__texto { margin: 0; }
 
+/* ---------- Frase de destaque (antes de "As 3 semanas") ---------- */
+
+.frase-destaque {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 144;
+  color: var(--grafite);
+  font-size: clamp(1.9rem, 7.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 48px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--bordo);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.frase-destaque em { color: var(--bordo); font-weight: 800; }
+
 /* ---------- 6. Resultados (antes e depois) ---------- */
 
 .resultado {
