@@ -251,19 +251,35 @@ em {
 
 /* ---------- Grades ---------- */
 
+/* Celular e tablet: carrossel que desliza para o lado (o próximo card aparece
+   pela metade para mostrar que tem mais). Computador: grade em colunas. */
 .grade {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 84%;
   gap: 16px;
-  grid-template-columns: 1fr;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter) 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--gutter);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
+.grade > * { scroll-snap-align: start; }
 
 @media (min-width: 640px) {
-  .grade--2, .grade--3, .grade--4 { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .grade { grid-auto-columns: 46%; gap: 20px; }
 }
 @media (min-width: 960px) {
+  .grade {
+    grid-auto-flow: row;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+  .grade--2 { grid-template-columns: repeat(2, 1fr); }
   .grade--3 { grid-template-columns: repeat(3, 1fr); }
   .grade--4 { grid-template-columns: repeat(4, 1fr); }
 }

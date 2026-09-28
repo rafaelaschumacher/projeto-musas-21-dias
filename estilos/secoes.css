@@ -328,20 +328,6 @@
 
 /* ---------- 6. Resultados (antes e depois) ---------- */
 
-/* No celular: deslizar para o lado. No computador: grade de 3 colunas. */
-.resultados {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 86%;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  margin: 0 calc(var(--gutter) * -1);
-  padding: 0 var(--gutter) 12px;
-  scroll-padding: 0 var(--gutter);
-  scrollbar-width: thin;
-}
-
 .resultado {
   scroll-snap-align: start;
   margin: 0;
@@ -359,19 +345,6 @@
   object-fit: contain;
   background: var(--porcelana);
   border-radius: var(--raio-pequeno);
-}
-
-@media (min-width: 640px) {
-  .resultados { grid-auto-columns: 46%; }
-}
-@media (min-width: 960px) {
-  .resultados {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(3, 1fr);
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-  }
 }
 
 /* ---------- 7. Valor ---------- */
