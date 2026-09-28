@@ -106,13 +106,13 @@
   gap: 28px;
   grid-template-areas:
     "texto"
-    "video"
-    "oferta";
+    "oferta"
+    "video";
 }
 
 .hero__texto { grid-area: texto; }
 .hero__video { grid-area: video; }
-.hero__oferta { grid-area: oferta; text-align: center; }
+.hero__oferta { grid-area: oferta; }
 
 .hero .logo { margin-bottom: 28px; }
 
@@ -141,6 +141,46 @@
 
 .hero__oferta .botao { width: 100%; max-width: 420px; }
 
+.hero__parcela {
+  margin: 12px 0 0;
+  font-size: 0.9375rem;
+  color: var(--cacau-suave);
+}
+
+/* Selos de resumo abaixo do subtítulo */
+.selos {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.selos li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pilula);
+  background: var(--branco);
+  color: var(--terracota);
+  font-weight: 700;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+.selos li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--terracota);
+}
+
 .botao--aparecendo { animation: aparecer 0.4s ease both; }
 @keyframes aparecer {
   from { opacity: 0; transform: translateY(8px); }
@@ -160,12 +200,14 @@
     column-gap: 64px;
     align-items: start;
   }
-  .hero--vertical .hero__oferta { text-align: left; align-self: start; }
+  .hero--vertical .hero__oferta { align-self: start; }
   .hero--vertical .hero__texto { align-self: end; }
 
   /* Vídeo horizontal: tudo centralizado, vídeo largo */
-  .hero--horizontal .hero__texto { text-align: center; }
+  .hero--horizontal .hero__texto,
+  .hero--horizontal .hero__oferta { text-align: center; }
   .hero--horizontal .hero__sub { margin: 0 auto; }
+  .hero--horizontal .selos { justify-content: center; }
   .hero--horizontal .titulo--hero { max-width: 16ch; margin-left: auto; margin-right: auto; }
 }
 
@@ -243,7 +285,8 @@
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  background: var(--marfim);
+  background: var(--branco);
+  border: 1px solid var(--borda);
   border-radius: var(--raio-pequeno);
   padding: 20px;
 }
@@ -255,7 +298,7 @@
   height: 24px;
   padding: 10px;
   box-sizing: content-box;
-  background: var(--branco);
+  background: var(--marfim);
   border: 1px solid var(--borda);
   border-radius: 50%;
 }
@@ -283,22 +326,66 @@
   text-wrap: balance;
 }
 
-/* ---------- 6. Relatos ---------- */
+/* ---------- 6. Relatos (prints) ---------- */
+
+/* No celular: deslizar para o lado. No computador: 3 colunas. */
+.relatos {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 80%;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter) 12px;
+  scroll-padding: 0 var(--gutter);
+  scrollbar-width: thin;
+}
 
 .relato {
-  position: relative;
-  padding-top: 20px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 16px 24px;
 }
-.relato__aspas {
-  display: block;
-  font-family: var(--fonte-serif);
-  font-style: italic;
-  font-size: 5rem;
-  line-height: 0.8;
-  height: 0.5em;
-  color: var(--terracota);
+
+.relato__print,
+.relato__img {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  max-width: 100%;
 }
-.relato blockquote { margin: 0; font-size: 1.0625rem; }
+.relato__img {
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--raio-pequeno);
+  background: var(--areia);
+}
+
+.relato__frase {
+  margin: 0;
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+
+.relato__rotulo { margin: 0; padding: 0 4px; color: var(--cacau-suave); }
+
+@media (min-width: 640px) {
+  .relatos { grid-auto-columns: 45%; }
+}
+@media (min-width: 960px) {
+  .relatos {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+  }
+}
 
 /* ---------- 7. Valor ---------- */
 
@@ -385,7 +472,6 @@
 
 /* ---------- 10. Garantia ---------- */
 
-.garantia { padding-top: 0; }
 .garantia__card { display: flex; gap: 20px; align-items: flex-start; }
 .garantia__card .icone--card { margin-bottom: 0; }
 .garantia__texto { margin: 0; font-size: 1.0625rem; }

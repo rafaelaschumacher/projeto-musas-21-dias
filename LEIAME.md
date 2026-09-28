@@ -62,6 +62,20 @@ Para colocar uma foto em outro lugar, use esta linha no `index.html`:
 <img class="foto-real" src="imagens/nome-da-foto.webp" alt="descrição da foto" width="800" height="1200" loading="lazy">
 ```
 
+### Prints dos relatos
+
+1. Tire o print (de preferência na vertical) e converta para WebP no [squoosh.app](https://squoosh.app), com **600 px de largura**.
+2. Salve em `imagens/` como `relato-1.webp`, `relato-2.webp` e `relato-3.webp`.
+3. No `index.html`, procure `[Print: relato real 1` e troque a linha inteira da `<div class="foto relato__print" ...>...</div>` por:
+
+```html
+<img class="relato__img" src="imagens/relato-1.webp" alt="Print de mensagem de uma aluna" width="600" height="1067" loading="lazy">
+```
+
+4. Logo abaixo, troque `[frase curta do relato 1]` por uma frase do próprio relato e `[rótulo: ex. Paciente da Rafaela]` por quem é a pessoa.
+
+Use só prints com autorização da pessoa e, se precisar, esconda nome e foto dela.
+
 ## 4. Como testar os três estados
 
 A página muda sozinha conforme a data:
