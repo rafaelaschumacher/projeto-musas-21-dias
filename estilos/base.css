@@ -291,7 +291,8 @@ em {
 .foto-real {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
+  background: var(--areia);
   object-fit: cover;
   border-radius: var(--raio-pequeno);
 }

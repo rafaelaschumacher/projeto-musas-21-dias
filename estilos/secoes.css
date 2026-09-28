@@ -344,7 +344,8 @@
 
 /* ---------- 8. Quem vai te acompanhar ---------- */
 
-.pessoa .foto { margin-bottom: 24px; }
+.pessoa .foto,
+.pessoa .foto-real { margin-bottom: 24px; }
 
 .pessoa__nome {
   font-weight: 800;

@@ -51,16 +51,16 @@ Os textos que **mudam conforme a data** (faixa do topo e textos dos botões na l
 
 ## 3. Como colocar as fotos
 
-1. Deixe a foto em formato retrato (4:5), com **800 × 1000 px**.
+1. Deixe a foto em formato retrato (2:3), com **800 × 1200 px**.
 2. Converta para **WebP** no site [squoosh.app](https://squoosh.app): arraste a foto, escolha "WebP" à direita, qualidade por volta de 75, e baixe.
 3. Salve na pasta `imagens/`, com um nome simples e sem acento, por exemplo `rafaela.webp`.
-4. No `index.html`, procure `[Foto: Rafaela Schumacher]` e troque a linha inteira da `<div class="foto ...">...</div>` por:
+4. O jeito mais fácil de trocar uma foto é salvar a nova com **o mesmo nome** da antiga (`rafaela.webp` ou `fran.webp`) e substituir o arquivo na pasta `imagens/`. Aí não precisa mexer no `index.html`.
+
+Para colocar uma foto em outro lugar, use esta linha no `index.html`:
 
 ```html
-<img class="foto-real" src="imagens/rafaela.webp" alt="Rafaela Schumacher" width="800" height="1000" loading="lazy">
+<img class="foto-real" src="imagens/nome-da-foto.webp" alt="descrição da foto" width="800" height="1200" loading="lazy">
 ```
-
-Faça o mesmo com a foto da Fran.
 
 ## 4. Como testar os três estados
 
