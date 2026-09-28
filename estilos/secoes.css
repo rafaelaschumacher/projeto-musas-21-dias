@@ -11,19 +11,19 @@
 
 .secao--compacta { padding: 56px 0; }
 
-.secao--marfim { background: var(--marfim); }
-.secao--areia { background: var(--areia); }
+.secao--porcelana { background: var(--porcelana); }
+.secao--rose { background: var(--rose); }
 
-/* Sobre areia, texto secundário fica em cacau (cacau-suave não passa 4,5:1) */
-.secao--areia .texto-pequeno { color: var(--cacau); }
+/* Sobre rosé, texto secundário fica em grafite (grafite-suave não passa 4,5:1) */
+.secao--rose .texto-pequeno { color: var(--grafite); }
 
-.secao--terracota {
-  background: var(--terracota);
-  color: var(--marfim);
+.secao--bordo {
+  background: var(--bordo);
+  color: var(--porcelana);
   overflow: hidden;
 }
-.secao--terracota .titulo { color: var(--marfim); }
-.secao--terracota .titulo em { color: var(--pessego); } /* título ≥ 24px: 3,57:1 ok */
+.secao--bordo .titulo { color: var(--porcelana); }
+.secao--bordo .titulo em { color: var(--rose); } /* título ≥ 24px: 3,57:1 ok */
 
 .acao {
   margin-top: 40px;
@@ -37,8 +37,8 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--terracota);
-  color: var(--marfim);
+  background: var(--bordo);
+  color: var(--porcelana);
   padding: 10px var(--gutter);
   text-align: center;
 }
@@ -63,8 +63,8 @@
 }
 
 .faixa__contagem b {
-  background: var(--marfim);
-  color: var(--terracota);
+  background: var(--porcelana);
+  color: var(--bordo);
   border-radius: 8px;
   padding: 1px 6px;
   font-weight: 700;
@@ -93,7 +93,7 @@
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: var(--pessego);
+  background: var(--rose);
   top: -150px;
   right: -170px;
   opacity: 0.55;
@@ -136,7 +136,7 @@
   font-stretch: 75%;
   font-size: 1.5rem;
   letter-spacing: -0.01em;
-  color: var(--terracota);
+  color: var(--bordo);
 }
 
 .hero__oferta .botao { width: 100%; max-width: 420px; }
@@ -144,7 +144,7 @@
 .hero__parcela {
   margin: 12px 0 0;
   font-size: 0.9375rem;
-  color: var(--cacau-suave);
+  color: var(--grafite-suave);
 }
 
 /* Selos de resumo abaixo do subtítulo */
@@ -165,7 +165,7 @@
   border: 1px solid var(--borda);
   border-radius: var(--raio-pilula);
   background: var(--branco);
-  color: var(--terracota);
+  color: var(--bordo);
   font-weight: 700;
   font-stretch: 75%;
   text-transform: uppercase;
@@ -178,7 +178,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--terracota);
+  background: var(--bordo);
 }
 
 .botao--aparecendo { animation: aparecer 0.4s ease both; }
@@ -219,7 +219,7 @@
   margin: 0 auto;
   border-radius: var(--raio-bloco);
   overflow: hidden;
-  background: var(--cacau);
+  background: var(--grafite);
 }
 
 .vsl[data-formato="vertical"] { aspect-ratio: 9 / 16; max-width: 380px; }
@@ -247,13 +247,13 @@
   gap: 14px;
   padding: 24px;
   text-align: center;
-  color: var(--marfim);
+  color: var(--porcelana);
   font-weight: 700;
   font-stretch: 75%;
   font-size: 1.125rem;
   line-height: 1.25;
 }
-.vsl__placeholder .icone { width: 48px; height: 48px; color: var(--pessego); stroke-width: 1.5; }
+.vsl__placeholder .icone { width: 48px; height: 48px; color: var(--rose); stroke-width: 1.5; }
 
 /* ---------- 3. Identificação ---------- */
 
@@ -265,7 +265,7 @@
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin-bottom: 1.1em;
-  color: var(--terracota);
+  color: var(--bordo);
 }
 
 .identificacao__fecho {
@@ -273,7 +273,7 @@
   font-size: 1.125rem;
   margin-top: 1.6em;
   padding-top: 1.2em;
-  border-top: 1px solid var(--cacau);
+  border-top: 1px solid var(--grafite);
   display: inline-block;
 }
 
@@ -293,12 +293,12 @@
 .check p { margin: 0; font-size: 1rem; }
 
 .icone--check {
-  color: var(--terracota);
+  color: var(--bordo);
   width: 24px;
   height: 24px;
   padding: 10px;
   box-sizing: content-box;
-  background: var(--marfim);
+  background: var(--porcelana);
   border: 1px solid var(--borda);
   border-radius: 50%;
 }
@@ -318,7 +318,7 @@
 .frase-destaque {
   font-family: var(--fonte-serif);
   font-style: italic;
-  color: var(--terracota);
+  color: var(--bordo);
   font-size: clamp(2.25rem, 9vw, 4rem);
   line-height: 1.02;
   margin: 48px 0 0;
@@ -357,7 +357,7 @@
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: contain;
-  background: var(--marfim);
+  background: var(--porcelana);
   border-radius: var(--raio-pequeno);
 }
 
@@ -384,7 +384,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  border: 2px solid var(--pessego);
+  border: 2px solid var(--rose);
   bottom: -210px;
   left: -190px;
   opacity: 0.45;
@@ -400,7 +400,7 @@
   margin: 40px 0 8px;
 }
 .valor__destaque em {
-  color: var(--pessego); /* ≥ 24px sobre terracota: 3,57:1 */
+  color: var(--rose); /* rosé sobre bordô: 8,60:1 */
   font-size: 1.15em;
   white-space: nowrap;
 }
@@ -440,13 +440,13 @@
   display: block;
   font-family: var(--fonte-serif);
   font-style: italic;
-  color: var(--terracota);
+  color: var(--bordo);
   font-size: 6rem;
   line-height: 0.8;
   margin-bottom: 20px;
 }
 
-.semana .rotulo { color: var(--cacau-suave); }
+.semana .rotulo { color: var(--grafite-suave); }
 
 .semana__nome {
   font-weight: 800;
@@ -468,7 +468,7 @@
 .faq { display: grid; gap: 10px; }
 
 .faq__item {
-  background: var(--marfim);
+  background: var(--porcelana);
   border-radius: var(--raio-pequeno);
   border: 1px solid var(--borda);
 }
@@ -495,7 +495,7 @@
   height: 18px;
   padding: 6px;
   box-sizing: content-box;
-  color: var(--terracota);
+  color: var(--bordo);
   background: var(--branco);
   border: 1px solid var(--borda);
   border-radius: 50%;
@@ -544,7 +544,7 @@
   gap: 8px;
   min-height: 44px;
   font-weight: 700;
-  color: var(--terracota);
+  color: var(--bordo);
   text-decoration: none;
   align-self: flex-start;
 }
@@ -554,7 +554,7 @@
 /* ---------- 14. Rodapé ---------- */
 
 .rodape {
-  background: var(--marfim);
+  background: var(--porcelana);
   border-top: 1px solid var(--borda);
   padding: 48px 0 40px;
   font-size: 0.9375rem;
@@ -566,11 +566,11 @@
 }
 
 .rodape__pessoas { display: grid; gap: 14px; }
-.rodape__pessoas p { margin: 0; color: var(--cacau-suave); }
-.rodape__pessoas strong { color: var(--cacau); }
+.rodape__pessoas p { margin: 0; color: var(--grafite-suave); }
+.rodape__pessoas strong { color: var(--grafite); }
 
 .rodape__link {
-  color: var(--cacau);
+  color: var(--grafite);
   font-weight: 700;
   min-height: 44px;
   display: inline-flex;
@@ -588,7 +588,7 @@
   padding-top: 20px;
   border-top: 1px solid var(--borda);
   font-size: 0.875rem;
-  color: var(--cacau-suave);
+  color: var(--grafite-suave);
 }
 .rodape__direitos p { margin: 0; }
 .politica + .rodape { padding-top: 0; border-top: 0; }
@@ -607,7 +607,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
-  background: var(--marfim);
+  background: var(--porcelana);
   border-top: 1px solid var(--borda);
   transform: translateY(110%);
   transition: transform 0.25s ease;
@@ -622,7 +622,7 @@
   letter-spacing: -0.01em;
   font-size: 1.5rem;
   line-height: 1;
-  color: var(--cacau);
+  color: var(--grafite);
   white-space: nowrap;
 }
 
@@ -654,7 +654,7 @@ body.com-barra { padding-bottom: 76px; }
   transition: bottom 0.25s ease;
 }
 .cookies p { margin: 0 0 12px; }
-.cookies a { color: var(--terracota); font-weight: 700; }
+.cookies a { color: var(--bordo); font-weight: 700; }
 
 body.com-barra .cookies { bottom: 88px; }
 @media (min-width: 900px) { body.com-barra .cookies { bottom: 12px; } }
@@ -669,11 +669,11 @@ body.com-barra .cookies { bottom: 88px; }
   font-weight: 700;
   font-size: 0.9375rem;
   cursor: pointer;
-  border: 2px solid var(--terracota);
+  border: 2px solid var(--bordo);
 }
-.cookies__botao--recusar { background: var(--branco); color: var(--terracota); }
-.cookies__botao--aceitar { background: var(--terracota); color: var(--marfim); }
-.cookies__botao--aceitar:hover { background: var(--terracota-escuro); border-color: var(--terracota-escuro); }
+.cookies__botao--recusar { background: var(--branco); color: var(--bordo); }
+.cookies__botao--aceitar { background: var(--bordo); color: var(--porcelana); }
+.cookies__botao--aceitar:hover { background: var(--bordo-escuro); border-color: var(--bordo-escuro); }
 
 /* ---------- Avisos de teste (só aparecem enquanto você configura) ---------- */
 
@@ -684,8 +684,8 @@ body.com-barra .cookies { bottom: 88px; }
   transform: translate(-50%, -50%);
   z-index: 70;
   max-width: calc(100% - 32px);
-  background: var(--cacau);
-  color: var(--marfim);
+  background: var(--grafite);
+  color: var(--porcelana);
   border-radius: var(--raio-pequeno);
   padding: 14px 20px;
   font-size: 0.9375rem;
@@ -698,8 +698,8 @@ body.com-barra .cookies { bottom: 88px; }
   right: 12px;
   bottom: 96px;
   z-index: 45;
-  background: var(--cacau);
-  color: var(--marfim);
+  background: var(--grafite);
+  color: var(--porcelana);
   border-radius: var(--raio-pilula);
   padding: 6px 14px;
   font-weight: 700;
@@ -710,3 +710,95 @@ body.com-barra .cookies { bottom: 88px; }
   pointer-events: none;
 }
 @media (min-width: 900px) { .selo-teste { bottom: 12px; } }
+
+/* =========================================================
+   TIPOGRAFIA ATELIER SPORT
+   Títulos em Fraunces Italic; rótulos em Archivo condensada.
+   ========================================================= */
+
+/* Títulos: Fraunces Italic */
+.titulo {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-stretch: normal;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  font-variation-settings: "opsz" 144;
+}
+.titulo em {
+  font-family: var(--fonte-serif);
+  font-weight: 800;
+  font-size: 1em;
+  line-height: inherit;
+  color: var(--bordo);
+}
+.secao--bordo .titulo em { color: var(--rose); }
+
+.card__titulo,
+.pessoa__nome,
+.semana__nome,
+.check__nome,
+.encerramento__abre,
+.identificacao__semana,
+.valor__destaque {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-stretch: normal;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 72;
+}
+.valor__destaque { font-weight: 500; }
+.valor__destaque em {
+  font-family: var(--fonte-serif);
+  font-weight: 800;
+  color: var(--bronze); /* sobre bordô: 4,04:1, só em texto grande */
+}
+
+.frase-destaque {
+  font-family: var(--fonte-serif);
+  font-weight: 500;
+  color: var(--bordo);
+  font-variation-settings: "opsz" 144;
+}
+
+/* Números grandes das semanas: Archivo, bronze */
+.semana__numero {
+  font-family: var(--fonte-sans);
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--bronze);
+}
+
+/* Logo: "musas" em Fraunces Italic + "21" em Archivo bronze */
+.logo__musas {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 800;
+  font-stretch: normal;
+  text-transform: lowercase;
+  letter-spacing: -0.03em;
+  color: var(--bordo);
+}
+.logo__21 {
+  font-family: var(--fonte-sans);
+  font-style: normal;
+  font-weight: 800;
+  font-size: 1em;
+  letter-spacing: -0.03em;
+  color: var(--bronze);
+}
+
+/* Botões: rótulo em caixa alta, condensado */
+.botao {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-stretch: 75%;
+  font-size: 0.9375rem;
+}
+
+/* Sobre rosé, texto secundário em grafite */
+.secao--rose .rodape__pessoas p,
+.secao--rose .hero__parcela { color: var(--grafite); }

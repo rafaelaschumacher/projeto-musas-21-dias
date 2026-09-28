@@ -11,8 +11,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--marfim);
-  color: var(--cacau);
+  background: var(--porcelana);
+  color: var(--grafite);
   font-family: var(--fonte-sans);
   font-weight: 400;
   font-stretch: 100%;
@@ -31,12 +31,12 @@ img, svg, video, iframe { display: block; max-width: 100%; }
 p { margin: 0 0 1em; }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--terracota); }
+a { color: var(--bordo); }
 
 [hidden] { display: none !important; }
 
 :focus-visible {
-  outline: 3px solid var(--cacau);
+  outline: 3px solid var(--grafite);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -67,11 +67,11 @@ a { color: var(--terracota); }
   line-height: 0.92;
   font-size: clamp(2.5rem, 10.5vw, 4.5rem);
   margin: 0 0 0.6em;
-  color: var(--cacau);
+  color: var(--grafite);
   text-wrap: balance;
 }
 
-/* Destaque em Instrument Serif Italic (1 a 3 palavras por bloco) */
+/* Destaque em itálico (1 a 3 palavras por bloco) */
 .titulo em,
 em {
   font-family: var(--fonte-serif);
@@ -79,7 +79,7 @@ em {
   font-weight: 400;
   font-stretch: 100%;
   letter-spacing: 0;
-  color: var(--terracota);
+  color: var(--bordo);
 }
 
 .titulo em { font-size: 1.08em; line-height: 0.85; }
@@ -102,19 +102,19 @@ em {
 
 .texto-pequeno {
   font-size: 0.9375rem;
-  color: var(--cacau-suave);
+  color: var(--grafite-suave);
   margin-top: 1rem;
 }
 
 /* ---------- Placeholders (trechos a preencher) ---------- */
 
 .ph {
-  background: var(--pessego);
-  color: var(--cacau);
+  background: var(--rose);
+  color: var(--grafite);
   font-weight: 700;
   padding: 0.05em 0.35em;
   border-radius: 6px;
-  outline: 2px dashed var(--cacau);
+  outline: 2px dashed var(--grafite);
   outline-offset: 0;
   margin: 0 3px;
   box-decoration-break: clone;
@@ -137,14 +137,14 @@ em {
   font-weight: 800;
   font-stretch: 75%;
   letter-spacing: -0.02em;
-  color: var(--terracota);
+  color: var(--bordo);
 }
 
 .logo__21 {
   font-family: var(--fonte-serif);
   font-style: italic;
   font-weight: 400;
-  color: var(--cacau);
+  color: var(--grafite);
   font-size: 1.12em;
 }
 
@@ -186,28 +186,28 @@ em {
 .botao:active { transform: scale(0.98); }
 
 .botao--principal {
-  background: var(--terracota);
-  color: var(--marfim);
+  background: var(--bordo);
+  color: var(--porcelana);
 }
 .botao--principal:hover,
 .botao--principal:active {
-  background: var(--terracota-escuro);
+  background: var(--bordo-escuro);
 }
 
 .botao--secundario {
-  background: var(--marfim);
-  color: var(--terracota);
-  border-color: var(--terracota);
+  background: var(--porcelana);
+  color: var(--bordo);
+  border-color: var(--bordo);
 }
 .botao--secundario:hover,
 .botao--secundario:active {
-  color: var(--terracota-escuro);
-  border-color: var(--terracota-escuro);
+  color: var(--bordo-escuro);
+  border-color: var(--bordo-escuro);
   background: var(--branco);
 }
 
-/* Em fundo terracota, o foco precisa aparecer em marfim */
-.secao--terracota :focus-visible { outline-color: var(--marfim); }
+/* Em fundo bordô, o foco precisa aparecer em porcelana */
+.secao--bordo :focus-visible { outline-color: var(--porcelana); }
 
 .botao--compacto {
   padding: 12px 20px;
@@ -234,7 +234,7 @@ em {
   margin: 0 0 0.5em;
 }
 
-.card__texto { font-size: 1rem; color: var(--cacau); }
+.card__texto { font-size: 1rem; color: var(--grafite); }
 
 /* Ícone de 24px (traço real de 2px) dentro de uma "pastilha" arredondada */
 .icone--card {
@@ -242,8 +242,8 @@ em {
   height: 24px;
   padding: 14px;
   box-sizing: content-box;
-  color: var(--terracota);
-  background: var(--marfim);
+  color: var(--bordo);
+  background: var(--porcelana);
   border: 1px solid var(--borda);
   border-radius: var(--raio-pequeno);
   margin-bottom: 20px;
@@ -272,7 +272,7 @@ em {
 
 .foto {
   background: var(--foto);
-  color: var(--marfim);
+  color: var(--porcelana);
   border-radius: var(--raio-pequeno);
   display: flex;
   align-items: center;
@@ -282,7 +282,7 @@ em {
   font-family: var(--fonte-sans);
   font-weight: 700;
   font-stretch: 75%;
-  font-size: 1.5rem; /* 24px: contraste marfim sobre #B45A34 é 4,39:1 */
+  font-size: 1.5rem; /* porcelana sobre #72303F: 8,48:1 */
   line-height: 1.1;
 }
 
@@ -292,7 +292,7 @@ em {
   width: 100%;
   height: auto;
   aspect-ratio: 2 / 3;
-  background: var(--areia);
+  background: var(--rose);
   object-fit: cover;
   border-radius: var(--raio-pequeno);
 }

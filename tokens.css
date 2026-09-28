@@ -1,24 +1,24 @@
 /* =========================================================
-   TOKENS — Identidade visual Golden Hour do Musas 21
+   TOKENS — Identidade visual "Atelier Sport" do Musas 21
    Todas as cores, fontes e raios da página ficam aqui.
    ========================================================= */
 
 :root {
   /* Cores */
-  --terracota: #9E4522;        /* principal: botões, títulos de destaque, ícones */
-  --terracota-escuro: #843A1C; /* hover e estado pressionado dos botões */
-  --pessego: #F3B68E;          /* apoio: destaques sobre fundo terracota (texto só a partir de 24px) */
-  --areia: #EEDFCB;            /* blocos e seções alternadas */
-  --marfim: #FBF6EF;           /* fundo geral */
-  --branco: #FFFFFF;           /* cards */
-  --cacau: #3A2419;            /* texto principal e o "21" do logo */
-  --cacau-suave: #7A6255;      /* texto secundário (nunca em texto pequeno sobre areia) */
-  --borda: #E8DACA;            /* bordas finas de 1px */
-  --foto: #B45A34;             /* fundo dos espaços reservados para fotos */
+  --bordo: #5C1A2B;          /* principal: botões, títulos de destaque, ícones, faixa do topo */
+  --bordo-escuro: #431220;   /* hover e estado pressionado dos botões */
+  --rose: #EBCDC6;           /* apoio: seções alternadas e destaques sobre bordô */
+  --porcelana: #F7F1EC;      /* fundo geral */
+  --branco: #FFFFFF;         /* cards */
+  --grafite: #221C1E;        /* texto principal */
+  --grafite-suave: #6E5F62;  /* texto secundário (nunca em texto pequeno sobre rosé) */
+  --bronze: #B08A57;         /* o "21" do logo e números grandes (só texto grande, sobre porcelana é decorativo) */
+  --borda: #E6D9D3;          /* bordas finas de 1px */
+  --foto: #72303F;           /* fundo dos espaços reservados para fotos */
 
   /* Fontes */
-  --fonte-sans: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --fonte-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --fonte-sans: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;   /* texto; condensada = rótulos */
+  --fonte-serif: "Fraunces", Georgia, "Times New Roman", serif;               /* títulos em itálico */
 
   /* Raios */
   --raio-bloco: 28px;
@@ -30,7 +30,7 @@
   --largura-max: 1120px;
   --espaco-secao: 88px;
 
-  /* Alturas de elementos fixos (usadas no JS e CSS) */
+  /* Alturas de elementos fixos */
   --altura-botao: 52px;
 }
 
