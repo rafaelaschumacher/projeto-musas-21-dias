@@ -261,39 +261,6 @@
   line-height: 1.25;
 }
 
-/* Exemplo visual do dia a dia no desafio */
-.checks-demo {
-  width: 100%;
-  max-width: 260px;
-  background: var(--branco);
-  border-radius: var(--raio-pequeno);
-  padding: 20px;
-  text-align: left;
-  color: var(--grafite);
-}
-.checks-demo .rotulo { color: var(--grafite-suave); font-size: 0.6875rem; margin-bottom: 6px; }
-.checks-demo__titulo {
-  font-family: var(--fonte-serif);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.1;
-  margin: 0 0 14px;
-}
-.checks-demo__titulo em { color: var(--bordo); font-weight: 800; }
-.checks-demo ul { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 10px; }
-.checks-demo li { display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; line-height: 1.2; }
-.checks-demo li .icone { width: 20px; height: 20px; color: var(--grafite-suave); }
-.checks-demo li.feito .icone { color: var(--bordo); }
-.checks-demo__total { margin: 0; font-size: 0.8125rem; color: var(--grafite-suave); }
-.checks-demo__total strong {
-  font-weight: 800;
-  font-stretch: 75%;
-  font-size: 1.25rem;
-  color: var(--bordo);
-  margin-right: 4px;
-}
-
 /* ---------- 3. Identificação ---------- */
 
 .identificacao__semana {
@@ -335,55 +302,6 @@
 }
 .passo .card__titulo { margin: 0; }
 .passo .card__texto { margin: 0; }
-
-/* ---------- 5. Método dos 4 checks ---------- */
-
-.texto--intro { margin-bottom: 28px; }
-
-.check {
-  display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  background: var(--branco);
-  border: 1px solid var(--borda);
-  border-radius: var(--raio-pequeno);
-  padding: 20px;
-}
-.check p { margin: 0; font-size: 1rem; }
-
-.icone--check {
-  color: var(--bordo);
-  width: 24px;
-  height: 24px;
-  padding: 10px;
-  box-sizing: content-box;
-  background: var(--porcelana);
-  border: 1px solid var(--borda);
-  border-radius: 50%;
-}
-
-.check__nome {
-  display: block;
-  font-weight: 800;
-  font-stretch: 75%;
-  font-size: 1.375rem;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  margin-bottom: 4px;
-}
-
-.checks__regras { margin-top: 36px; }
-
-.frase-destaque {
-  font-family: var(--fonte-serif);
-  font-style: italic;
-  color: var(--bordo);
-  font-size: clamp(1.9rem, 7.5vw, 3rem);
-  line-height: 1.02;
-  margin: 48px 0 0;
-  max-width: 18ch;
-  text-wrap: balance;
-}
 
 /* ---------- 6. Resultados (antes e depois) ---------- */
 
@@ -787,7 +705,6 @@ body.com-barra .cookies { bottom: 88px; }
 .card__titulo,
 .pessoa__nome,
 .semana__nome,
-.check__nome,
 .encerramento__abre,
 .identificacao__semana,
 .valor__destaque {
@@ -805,12 +722,6 @@ body.com-barra .cookies { bottom: 88px; }
   color: var(--bronze); /* sobre bordô: 4,04:1, só em texto grande */
 }
 
-.frase-destaque {
-  font-family: var(--fonte-serif);
-  font-weight: 500;
-  color: var(--bordo);
-  font-variation-settings: "opsz" 144;
-}
 
 /* Números grandes das semanas: Archivo, bronze */
 .semana__numero {
@@ -852,10 +763,6 @@ body.com-barra .cookies { bottom: 88px; }
 .secao--rose .rodape__pessoas p,
 .secao--rose .hero__parcela { color: var(--grafite); }
 
-/* 4 checks em 2 colunas no celular: ícone em cima do texto */
-@media (max-width: 959px) {
-  .check { flex-direction: column; gap: 10px; padding: 16px; }
-}
 
 /* Nomes nos cards de 2 colunas do celular */
 @media (max-width: 959px) {
