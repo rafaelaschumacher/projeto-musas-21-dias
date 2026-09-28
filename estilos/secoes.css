@@ -1,0 +1,627 @@
+/* =========================================================
+   SEÇÕES — layout de cada parte da página
+   ========================================================= */
+
+/* ---------- Seções e fundos alternados ---------- */
+
+.secao {
+  position: relative;
+  padding: var(--espaco-secao) 0;
+}
+
+.secao--compacta { padding: 56px 0; }
+
+.secao--marfim { background: var(--marfim); }
+.secao--areia { background: var(--areia); }
+
+/* Sobre areia, texto secundário fica em cacau (cacau-suave não passa 4,5:1) */
+.secao--areia .texto-pequeno { color: var(--cacau); }
+
+.secao--terracota {
+  background: var(--terracota);
+  color: var(--marfim);
+  overflow: hidden;
+}
+.secao--terracota .titulo { color: var(--marfim); }
+.secao--terracota .titulo em { color: var(--pessego); } /* título ≥ 24px: 3,57:1 ok */
+
+.acao {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- 1. Faixa do topo ---------- */
+
+.faixa {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--terracota);
+  color: var(--marfim);
+  padding: 10px var(--gutter);
+  text-align: center;
+}
+
+.faixa__texto {
+  margin: 0 auto;
+  max-width: 900px;
+  font-weight: 700;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.faixa__contagem {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 6px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.faixa__contagem b {
+  background: var(--marfim);
+  color: var(--terracota);
+  border-radius: 8px;
+  padding: 1px 6px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 599px) {
+  .faixa__contagem { display: flex; justify-content: center; margin: 6px 0 0; }
+  .faixa__contagem[hidden] { display: none; }
+}
+
+@media (min-width: 900px) {
+  .faixa__texto { font-size: 0.8125rem; }
+}
+
+/* ---------- 2. Hero ---------- */
+
+.hero {
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+/* Sol de fim de tarde: forma decorativa, sem gradiente */
+.hero__sol {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: var(--pessego);
+  top: -150px;
+  right: -170px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero__grade {
+  position: relative;
+  display: grid;
+  gap: 28px;
+  grid-template-areas:
+    "texto"
+    "video"
+    "oferta";
+}
+
+.hero__texto { grid-area: texto; }
+.hero__video { grid-area: video; }
+.hero__oferta { grid-area: oferta; text-align: center; }
+
+.hero .logo { margin-bottom: 28px; }
+
+.titulo--hero {
+  font-size: clamp(2.75rem, 12.5vw, 5.75rem);
+  margin-bottom: 0.4em;
+}
+
+.hero__sub {
+  font-size: 1.125rem;
+  max-width: 38ch;
+  margin: 0;
+}
+
+.preco-linha {
+  font-size: 1.0625rem;
+  margin-bottom: 16px;
+}
+.preco-linha strong {
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--terracota);
+}
+
+.hero__oferta .botao { width: 100%; max-width: 420px; }
+
+.botao--aparecendo { animation: aparecer 0.4s ease both; }
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (min-width: 900px) {
+  .hero { padding-top: 64px; }
+  .hero__sol { width: 560px; height: 560px; top: -220px; right: -200px; }
+
+  /* Vídeo vertical: texto à esquerda, vídeo à direita */
+  .hero--vertical .hero__grade {
+    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-areas:
+      "texto video"
+      "oferta video";
+    column-gap: 64px;
+    align-items: start;
+  }
+  .hero--vertical .hero__oferta { text-align: left; align-self: start; }
+  .hero--vertical .hero__texto { align-self: end; }
+
+  /* Vídeo horizontal: tudo centralizado, vídeo largo */
+  .hero--horizontal .hero__texto { text-align: center; }
+  .hero--horizontal .hero__sub { margin: 0 auto; }
+  .hero--horizontal .titulo--hero { max-width: 16ch; margin-left: auto; margin-right: auto; }
+}
+
+/* ---------- VSL ---------- */
+
+.vsl {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: var(--raio-bloco);
+  overflow: hidden;
+  background: var(--cacau);
+}
+
+.vsl[data-formato="vertical"] { aspect-ratio: 9 / 16; max-width: 380px; }
+.vsl[data-formato="horizontal"] { aspect-ratio: 16 / 9; max-width: 960px; }
+
+.vsl iframe,
+.vsl video,
+.vsl__conteudo > * {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+.vsl__conteudo { position: absolute; inset: 0; }
+
+.vsl__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  color: var(--marfim);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+.vsl__placeholder .icone { width: 48px; height: 48px; color: var(--pessego); stroke-width: 1.5; }
+
+/* ---------- 3. Identificação ---------- */
+
+.identificacao__semana {
+  font-family: var(--fonte-sans);
+  font-weight: 700;
+  font-stretch: 75%;
+  font-size: 1.625rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.1em;
+  color: var(--terracota);
+}
+
+.identificacao__fecho {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-top: 1.6em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--cacau);
+  display: inline-block;
+}
+
+/* ---------- 5. Método dos 4 checks ---------- */
+
+.texto--intro { margin-bottom: 28px; }
+
+.check {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--marfim);
+  border-radius: var(--raio-pequeno);
+  padding: 20px;
+}
+.check p { margin: 0; font-size: 1rem; }
+
+.icone--check {
+  color: var(--terracota);
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+  box-sizing: content-box;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+}
+
+.check__nome {
+  display: block;
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: 1.375rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.checks__regras { margin-top: 36px; }
+
+.frase-destaque {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  color: var(--terracota);
+  font-size: clamp(2.25rem, 9vw, 4rem);
+  line-height: 1.02;
+  margin: 48px 0 0;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+
+/* ---------- 6. Relatos ---------- */
+
+.relato {
+  position: relative;
+  padding-top: 20px;
+}
+.relato__aspas {
+  display: block;
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-size: 5rem;
+  line-height: 0.8;
+  height: 0.5em;
+  color: var(--terracota);
+}
+.relato blockquote { margin: 0; font-size: 1.0625rem; }
+
+/* ---------- 7. Valor ---------- */
+
+.valor { text-align: center; }
+.valor .texto { margin: 0 auto; }
+
+.valor__sol {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 2px solid var(--pessego);
+  bottom: -210px;
+  left: -190px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.valor__destaque {
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  font-size: clamp(2.25rem, 10vw, 4rem);
+  margin: 40px 0 8px;
+}
+.valor__destaque em {
+  color: var(--pessego); /* ≥ 24px sobre terracota: 3,57:1 */
+  font-size: 1.15em;
+  white-space: nowrap;
+}
+
+.valor__dia {
+  font-weight: 700;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.875rem;
+  margin-bottom: 32px;
+}
+
+.valor .container { position: relative; }
+
+/* ---------- 8. Quem vai te acompanhar ---------- */
+
+.pessoa .foto { margin-bottom: 24px; }
+
+.pessoa__nome {
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.02em;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 0 0 0.4em;
+}
+
+.juntas { margin-top: 40px; font-size: 1.125rem; }
+
+/* ---------- 9. As 3 semanas ---------- */
+
+.semana { position: relative; overflow: hidden; }
+
+.semana__numero {
+  display: block;
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  color: var(--terracota);
+  font-size: 6rem;
+  line-height: 0.8;
+  margin-bottom: 20px;
+}
+
+.semana .rotulo { color: var(--cacau-suave); }
+
+.semana__nome {
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.02em;
+  font-size: 2rem;
+  line-height: 1;
+  margin: 0 0 0.4em;
+}
+
+/* ---------- 10. Garantia ---------- */
+
+.garantia { padding-top: 0; }
+.garantia__card { display: flex; gap: 20px; align-items: flex-start; }
+.garantia__card .icone--card { margin-bottom: 0; }
+.garantia__texto { margin: 0; font-size: 1.0625rem; }
+
+/* ---------- 11. FAQ (acordeão) ---------- */
+
+.faq { display: grid; gap: 10px; }
+
+.faq__item {
+  background: var(--marfim);
+  border-radius: var(--raio-pequeno);
+  border: 1px solid var(--borda);
+}
+
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  line-height: 1.3;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+
+/* Sinal de + que vira − (ícone SVG, traço 2px) */
+.faq__icone {
+  width: 18px;
+  height: 18px;
+  padding: 6px;
+  box-sizing: content-box;
+  color: var(--terracota);
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+}
+.faq__vertical { transition: opacity 0.2s ease; }
+.faq__item[open] .faq__vertical { opacity: 0; }
+
+.faq__item p {
+  padding: 0 20px 20px;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* ---------- 12. Encerramento ---------- */
+
+.encerramento { text-align: center; }
+.encerramento .texto { margin: 0 auto; }
+
+.encerramento__abre {
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.02em;
+  font-size: 1.75rem;
+  line-height: 1.05;
+  margin-bottom: 0.6em;
+}
+
+.encerramento__destaque {
+  font-size: clamp(2.25rem, 9.5vw, 4rem);
+  margin: 40px auto 32px;
+  max-width: 14ch;
+}
+
+/* ---------- 13. Acompanhamento individual ---------- */
+
+.individual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-weight: 700;
+  color: var(--terracota);
+  text-decoration: none;
+  align-self: flex-start;
+}
+.link-seta:hover { text-decoration: underline; text-underline-offset: 4px; }
+.link-seta .icone { width: 20px; height: 20px; }
+
+/* ---------- 14. Rodapé ---------- */
+
+.rodape {
+  background: var(--marfim);
+  border-top: 1px solid var(--borda);
+  padding: 48px 0 40px;
+  font-size: 0.9375rem;
+}
+
+.rodape__grade {
+  display: grid;
+  gap: 24px;
+}
+
+.rodape__pessoas { display: grid; gap: 14px; }
+.rodape__pessoas p { margin: 0; color: var(--cacau-suave); }
+.rodape__pessoas strong { color: var(--cacau); }
+
+.rodape__link {
+  color: var(--cacau);
+  font-weight: 700;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+}
+
+@media (min-width: 900px) {
+  .rodape__grade { grid-template-columns: auto 1fr auto; align-items: center; gap: 48px; }
+  .rodape__pessoas { grid-template-columns: auto auto; gap: 40px; }
+}
+
+/* ---------- Barra fixa (celular) ---------- */
+
+.barra-fixa {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: var(--marfim);
+  border-top: 1px solid var(--borda);
+  transform: translateY(110%);
+  transition: transform 0.25s ease;
+}
+
+.barra-fixa--visivel { transform: none; }
+
+.barra-fixa__preco {
+  margin: 0;
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--cacau);
+  white-space: nowrap;
+}
+
+.barra-fixa .botao { flex: 0 1 auto; }
+
+body.com-barra { padding-bottom: 76px; }
+
+@media (min-width: 900px) {
+  .barra-fixa { display: none; }
+  body.com-barra { padding-bottom: 0; }
+}
+
+/* ---------- Aviso de cookies ---------- */
+
+.cookies {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 60;
+  max-width: 420px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pequeno);
+  padding: 16px;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  box-shadow: 0 6px 24px rgba(58, 36, 25, 0.08);
+  transition: bottom 0.25s ease;
+}
+.cookies p { margin: 0 0 12px; }
+.cookies a { color: var(--terracota); font-weight: 700; }
+
+body.com-barra .cookies { bottom: 88px; }
+@media (min-width: 900px) { body.com-barra .cookies { bottom: 12px; } }
+
+.cookies__botoes { display: flex; gap: 8px; justify-content: flex-end; }
+
+.cookies__botao {
+  min-height: 44px;
+  padding: 8px 18px;
+  border-radius: var(--raio-pilula);
+  font-family: var(--fonte-sans);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  border: 2px solid var(--terracota);
+}
+.cookies__botao--recusar { background: var(--branco); color: var(--terracota); }
+.cookies__botao--aceitar { background: var(--terracota); color: var(--marfim); }
+.cookies__botao--aceitar:hover { background: var(--terracota-escuro); border-color: var(--terracota-escuro); }
+
+/* ---------- Avisos de teste (só aparecem enquanto você configura) ---------- */
+
+.aviso {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 70;
+  max-width: calc(100% - 32px);
+  background: var(--cacau);
+  color: var(--marfim);
+  border-radius: var(--raio-pequeno);
+  padding: 14px 20px;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+.selo-teste {
+  position: fixed;
+  top: auto;
+  right: 12px;
+  bottom: 96px;
+  z-index: 45;
+  background: var(--cacau);
+  color: var(--marfim);
+  border-radius: var(--raio-pilula);
+  padding: 6px 14px;
+  font-weight: 700;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.6875rem;
+  pointer-events: none;
+}
+@media (min-width: 900px) { .selo-teste { bottom: 12px; } }

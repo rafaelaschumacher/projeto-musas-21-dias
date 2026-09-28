@@ -1,0 +1,42 @@
+/* =========================================================
+   TOKENS — Identidade visual Golden Hour do Musas 21
+   Todas as cores, fontes e raios da página ficam aqui.
+   ========================================================= */
+
+:root {
+  /* Cores */
+  --terracota: #9E4522;        /* principal: botões, títulos de destaque, ícones */
+  --terracota-escuro: #843A1C; /* hover e estado pressionado dos botões */
+  --pessego: #F3B68E;          /* apoio: destaques sobre fundo terracota (texto só a partir de 24px) */
+  --areia: #EEDFCB;            /* blocos e seções alternadas */
+  --marfim: #FBF6EF;           /* fundo geral */
+  --branco: #FFFFFF;           /* cards */
+  --cacau: #3A2419;            /* texto principal e o "21" do logo */
+  --cacau-suave: #7A6255;      /* texto secundário (nunca em texto pequeno sobre areia) */
+  --borda: #E8DACA;            /* bordas finas de 1px */
+  --foto: #B45A34;             /* fundo dos espaços reservados para fotos */
+
+  /* Fontes */
+  --fonte-sans: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fonte-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+
+  /* Raios */
+  --raio-bloco: 28px;
+  --raio-pequeno: 20px;
+  --raio-pilula: 999px;
+
+  /* Espaçamentos */
+  --gutter: 20px;
+  --largura-max: 1120px;
+  --espaco-secao: 88px;
+
+  /* Alturas de elementos fixos (usadas no JS e CSS) */
+  --altura-botao: 52px;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --gutter: 32px;
+    --espaco-secao: 128px;
+  }
+}

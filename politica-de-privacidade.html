@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Política de privacidade | Projeto Musas 21</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#9E4522">
+  <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Instrument+Serif:ital@0;1&display=swap">
+
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="estilos/base.css">
+  <link rel="stylesheet" href="estilos/secoes.css">
+  <style>
+    .politica { padding: 48px 0 88px; }
+    .politica .logo { margin-bottom: 40px; text-decoration: none; }
+    .politica h1 { font-size: clamp(2.5rem, 11vw, 4rem); }
+    .politica h2 {
+      font-weight: 800; font-stretch: 75%; letter-spacing: -0.01em;
+      font-size: 1.5rem; line-height: 1.1; margin: 2em 0 0.5em;
+    }
+    .politica ul { padding-left: 1.2em; margin: 0 0 1em; }
+    .politica li { margin-bottom: 0.4em; }
+    .politica .atualizado { color: var(--cacau-suave); font-size: 0.9375rem; }
+    .politica .voltar { margin-top: 48px; }
+  </style>
+</head>
+<body>
+  <main class="politica">
+    <div class="container container--estreito">
+      <a class="logo" href="index.html" aria-label="Musas 21, voltar para a página inicial"><span class="logo__musas">Musas</span><span class="logo__21">21</span></a>
+
+      <h1 class="titulo">Política de <em>privacidade</em></h1>
+      <p class="atualizado">Última atualização: <mark class="ph">[data]</mark></p>
+
+      <p>Esta política explica como a página do Projeto Musas 21 usa cookies e o Pixel da Meta. Ela vale só para esta página. A compra acontece no checkout da Kiwify, que tem a própria política de privacidade.</p>
+
+      <h2>Quem é a responsável</h2>
+      <p><mark class="ph">[nome completo ou razão social]</mark>, <mark class="ph">[CPF ou CNPJ]</mark>. Contato: <mark class="ph">[e-mail]</mark>.</p>
+
+      <h2>Quais dados esta página coleta</h2>
+      <p>Esta página não tem formulário e não pede nome, e-mail ou telefone. Se você aceitar os cookies, o Pixel da Meta registra informações de navegação, como:</p>
+      <ul>
+        <li>que você visitou a página;</li>
+        <li>se você clicou em um botão que leva ao checkout;</li>
+        <li>dados técnicos do aparelho e do navegador;</li>
+        <li>de qual anúncio ou link você veio (parâmetros UTM).</li>
+      </ul>
+
+      <h2>Para que usamos esses dados</h2>
+      <ul>
+        <li>Medir o resultado dos anúncios no Instagram e no Facebook.</li>
+        <li>Mostrar anúncios do Musas 21 para quem já conhece o projeto.</li>
+      </ul>
+      <p>Os parâmetros UTM do link que você usou são repassados ao checkout da Kiwify, para sabermos de qual anúncio veio cada inscrição.</p>
+
+      <h2>Com quem os dados são compartilhados</h2>
+      <p>Com a Meta Platforms (dona do Facebook e do Instagram), por meio do Pixel, e com a Kiwify, quando você vai para o checkout. Não vendemos seus dados.</p>
+
+      <h2>Cookies</h2>
+      <p>Ao abrir a página, você escolhe se aceita ou recusa os cookies de medição. Se recusar, o Pixel da Meta não é ativado. Sua escolha fica salva só no seu navegador.</p>
+      <p><button type="button" class="botao botao--secundario" id="refazer-cookies">Mudar minha escolha de cookies</button></p>
+      <p>Você também pode apagar os cookies nas configurações do seu navegador.</p>
+
+      <h2>Seus direitos</h2>
+      <p>Pela Lei Geral de Proteção de Dados (LGPD), você pode pedir acesso, correção ou exclusão dos seus dados e retirar o seu consentimento. Para isso, escreva para <mark class="ph">[e-mail]</mark>.</p>
+
+      <p class="voltar"><a class="link-seta" href="index.html">Voltar para a página do Musas 21
+        <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a></p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("refazer-cookies").addEventListener("click", function () {
+      try { localStorage.removeItem("musas21-cookies"); } catch (e) {}
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
