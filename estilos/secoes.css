@@ -509,6 +509,17 @@
   .rodape__pessoas { grid-template-columns: auto auto; gap: 40px; }
 }
 
+.rodape__direitos {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--borda);
+  font-size: 0.875rem;
+  color: var(--cacau-suave);
+}
+.rodape__direitos p { margin: 0; }
+.politica + .rodape { padding-top: 0; border-top: 0; }
+.politica + .rodape .rodape__direitos { margin-top: 0; }
+
 /* ---------- Barra fixa (celular) ---------- */
 
 .barra-fixa {
