@@ -286,6 +286,22 @@
     });
   }
 
+  /* ---------- FAQ: mostra só as primeiras perguntas ---------- */
+
+  function recolherFaq() {
+    var faq = document.getElementById("faq");
+    var botao = document.getElementById("faq-mais");
+    if (!faq || !botao || !faq.querySelector(".faq__item--extra")) return;
+    faq.classList.add("faq--recolhido");
+    botao.hidden = false;
+    botao.addEventListener("click", function () {
+      faq.classList.remove("faq--recolhido");
+      botao.hidden = true;
+      var primeira = faq.querySelector(".faq__item--extra summary");
+      if (primeira) primeira.focus();
+    });
+  }
+
   /* ---------- Selo de teste (?estado=...) ---------- */
 
   function mostrarSeloTeste() {
@@ -310,6 +326,7 @@
   aplicarLinkIndividual();
   ativarBarraFixa();
   iniciarCookies();
+  recolherFaq();
   mostrarSeloTeste();
 
   // A cada segundo: atualiza a contagem e troca de estado sozinha na hora certa

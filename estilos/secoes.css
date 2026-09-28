@@ -9,7 +9,7 @@
   padding: var(--espaco-secao) 0;
 }
 
-.secao--compacta { padding: 56px 0; }
+.secao--compacta { padding: 40px 0; }
 
 .secao--porcelana { background: var(--porcelana); }
 .secao--rose { background: var(--rose); }
@@ -117,7 +117,7 @@
 .hero .logo { margin-bottom: 28px; }
 
 .titulo--hero {
-  font-size: clamp(2.75rem, 12.5vw, 5.75rem);
+  font-size: clamp(2.35rem, 9.5vw, 4.25rem);
   margin-bottom: 0.4em;
 }
 
@@ -222,7 +222,11 @@
   background: var(--grafite);
 }
 
-.vsl[data-formato="vertical"] { aspect-ratio: 9 / 16; max-width: 380px; }
+.vsl[data-formato="vertical"] {
+  aspect-ratio: 9 / 16;
+  max-width: min(380px, calc(70vh * 9 / 16));
+  max-width: min(380px, calc(70svh * 9 / 16));
+}
 .vsl[data-formato="horizontal"] { aspect-ratio: 16 / 9; max-width: 960px; }
 
 .vsl iframe,
@@ -244,16 +248,51 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   padding: 24px;
   text-align: center;
+}
+
+.vsl__aviso {
   color: var(--porcelana);
   font-weight: 700;
   font-stretch: 75%;
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
   line-height: 1.25;
 }
-.vsl__placeholder .icone { width: 48px; height: 48px; color: var(--rose); stroke-width: 1.5; }
+
+/* Exemplo visual do dia a dia no desafio */
+.checks-demo {
+  width: 100%;
+  max-width: 260px;
+  background: var(--branco);
+  border-radius: var(--raio-pequeno);
+  padding: 20px;
+  text-align: left;
+  color: var(--grafite);
+}
+.checks-demo .rotulo { color: var(--grafite-suave); font-size: 0.6875rem; margin-bottom: 6px; }
+.checks-demo__titulo {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+.checks-demo__titulo em { color: var(--bordo); font-weight: 800; }
+.checks-demo ul { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 10px; }
+.checks-demo li { display: flex; align-items: center; gap: 10px; font-size: 0.9375rem; line-height: 1.2; }
+.checks-demo li .icone { width: 20px; height: 20px; color: var(--grafite-suave); }
+.checks-demo li.feito .icone { color: var(--bordo); }
+.checks-demo__total { margin: 0; font-size: 0.8125rem; color: var(--grafite-suave); }
+.checks-demo__total strong {
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: 1.25rem;
+  color: var(--bordo);
+  margin-right: 4px;
+}
 
 /* ---------- 3. Identificação ---------- */
 
@@ -276,6 +315,26 @@
   border-top: 1px solid var(--grafite);
   display: inline-block;
 }
+
+/* ---------- Como funciona (passos) ---------- */
+
+.passo { display: flex; flex-direction: column; gap: 8px; }
+.passo__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bordo);
+  color: var(--porcelana);
+  font-weight: 800;
+  font-stretch: 75%;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.passo .card__titulo { margin: 0; }
+.passo .card__texto { margin: 0; }
 
 /* ---------- 5. Método dos 4 checks ---------- */
 
@@ -319,7 +378,7 @@
   font-family: var(--fonte-serif);
   font-style: italic;
   color: var(--bordo);
-  font-size: clamp(2.25rem, 9vw, 4rem);
+  font-size: clamp(1.9rem, 7.5vw, 3rem);
   line-height: 1.02;
   margin: 48px 0 0;
   max-width: 18ch;
@@ -369,7 +428,7 @@
   font-stretch: 75%;
   letter-spacing: -0.02em;
   line-height: 0.95;
-  font-size: clamp(2.25rem, 10vw, 4rem);
+  font-size: clamp(1.9rem, 8vw, 3rem);
   margin: 40px 0 8px;
 }
 .valor__destaque em {
@@ -414,7 +473,7 @@
   font-family: var(--fonte-serif);
   font-style: italic;
   color: var(--bordo);
-  font-size: 6rem;
+  font-size: 4.5rem;
   line-height: 0.8;
   margin-bottom: 20px;
 }
@@ -482,6 +541,23 @@
   font-size: 1rem;
 }
 
+.faq--recolhido .faq__item--extra { display: none; }
+
+.faq__mais {
+  margin-top: 10px;
+  width: 100%;
+  min-height: 56px;
+  border: 1px dashed var(--bordo);
+  border-radius: var(--raio-pequeno);
+  background: transparent;
+  color: var(--bordo);
+  font-family: var(--fonte-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.faq__mais:hover { background: var(--porcelana); }
+
 /* ---------- 12. Encerramento ---------- */
 
 .encerramento { text-align: center; }
@@ -497,7 +573,7 @@
 }
 
 .encerramento__destaque {
-  font-size: clamp(2.25rem, 9.5vw, 4rem);
+  font-size: clamp(1.9rem, 7.5vw, 3rem);
   margin: 40px auto 32px;
   max-width: 14ch;
 }

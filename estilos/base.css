@@ -65,7 +65,7 @@ a { color: var(--bordo); }
   font-stretch: 75%;
   letter-spacing: -0.02em;
   line-height: 0.92;
-  font-size: clamp(2.5rem, 10.5vw, 4.5rem);
+  font-size: clamp(2rem, 8vw, 3.5rem);
   margin: 0 0 0.6em;
   color: var(--grafite);
   text-wrap: balance;
@@ -282,6 +282,7 @@ em {
   .grade--2 { grid-template-columns: repeat(2, 1fr); }
   .grade--3 { grid-template-columns: repeat(3, 1fr); }
   .grade--4 { grid-template-columns: repeat(4, 1fr); }
+  .grade--5 { grid-template-columns: repeat(5, 1fr); }
 }
 
 /* ---------- Foto (espaço reservado) ---------- */
