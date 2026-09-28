@@ -851,3 +851,15 @@ body.com-barra .cookies { bottom: 88px; }
 /* Sobre rosé, texto secundário em grafite */
 .secao--rose .rodape__pessoas p,
 .secao--rose .hero__parcela { color: var(--grafite); }
+
+/* 4 checks em 2 colunas no celular: ícone em cima do texto */
+@media (max-width: 959px) {
+  .check { flex-direction: column; gap: 10px; padding: 16px; }
+}
+
+/* Nomes nos cards de 2 colunas do celular */
+@media (max-width: 959px) {
+  .grade .pessoa__nome { font-size: 1.375rem; overflow-wrap: anywhere; }
+  .grade .semana__nome { font-size: 1.5rem; }
+  .grade .semana__numero { font-size: 3.25rem; margin-bottom: 12px; }
+}

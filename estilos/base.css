@@ -251,38 +251,51 @@ em {
 
 /* ---------- Grades ---------- */
 
-/* Celular e tablet: carrossel que desliza para o lado (o próximo card aparece
-   pela metade para mostrar que tem mais). Computador: grade em colunas. */
+/* Celular e tablet: 2 colunas (card sozinho no fim ocupa a linha toda).
+   Computador: 2, 3, 4 ou 5 colunas conforme a grade. */
 .grade {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 84%;
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   list-style: none;
-  margin: 0 calc(var(--gutter) * -1);
-  padding: 0 var(--gutter) 12px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0 var(--gutter);
-  scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch;
+  margin: 0;
+  padding: 0;
 }
-.grade > * { scroll-snap-align: start; }
+.grade:not(.resultados) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
 
-@media (min-width: 640px) {
-  .grade { grid-auto-columns: 46%; gap: 20px; }
+@media (max-width: 959px) {
+  .grade .card { padding: 20px 16px; border-radius: var(--raio-pequeno); }
+  .grade .card__titulo { font-size: 1.1875rem; }
+  .grade .card__texto { font-size: 0.9375rem; line-height: 1.5; }
 }
+
 @media (min-width: 960px) {
-  .grade {
-    grid-auto-flow: row;
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-  }
+  .grade { gap: 20px; }
+  .grade:not(.resultados) > :last-child:nth-child(odd) { grid-column: auto; }
   .grade--2 { grid-template-columns: repeat(2, 1fr); }
   .grade--3 { grid-template-columns: repeat(3, 1fr); }
   .grade--4 { grid-template-columns: repeat(4, 1fr); }
   .grade--5 { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Antes e depois: continua deslizando para o lado no celular e tablet */
+@media (max-width: 959px) {
+  .grade.resultados {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    gap: 16px;
+    margin: 0 calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 var(--gutter);
+    scrollbar-width: thin;
+  }
+  .grade.resultados > * { scroll-snap-align: start; grid-column: auto; }
+}
+@media (min-width: 640px) and (max-width: 959px) {
+  .grade.resultados { grid-auto-columns: 46%; }
 }
 
 /* ---------- Foto (espaço reservado) ---------- */
