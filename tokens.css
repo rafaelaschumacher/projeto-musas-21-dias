@@ -13,7 +13,8 @@
   --grafite: #221C1E;        /* texto principal */
   --grafite-suave: #6E5F62;  /* texto secundário (nunca em texto pequeno sobre rosé) */
   --bronze: #B08A57;         /* o "21" do logo e números grandes (só texto grande, sobre porcelana é decorativo) */
-  --borda: #E6D9D3;          /* bordas finas de 1px */
+  --borda: #E6D9D3;          /* bordas finas de 1px dos cards */
+  --linha: rgba(34, 28, 30, 0.16); /* linhas divisórias sobre porcelana e rosé */
   --foto: #72303F;           /* fundo dos espaços reservados para fotos */
 
   /* Fontes */
@@ -21,8 +22,8 @@
   --fonte-serif: "Fraunces", Georgia, "Times New Roman", serif;               /* títulos em itálico */
 
   /* Raios */
-  --raio-bloco: 28px;
-  --raio-pequeno: 20px;
+  --raio-bloco: 20px;
+  --raio-pequeno: 12px;
   --raio-pilula: 999px;
 
   /* Espaçamentos */

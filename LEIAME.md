@@ -49,18 +49,20 @@ Abra o `index.html` e use a busca do navegador (Ctrl+F, ou Cmd+F no Mac) para ac
 
 Os textos que **mudam conforme a data** (faixa do topo e textos dos botões na lista de espera e no encerramento) ficam no `config.js`.
 
-## 3. Como colocar as fotos
+## 3. Como trocar as fotos
 
-1. Deixe a foto em formato retrato (2:3), com **800 × 1200 px**.
+A página usa duas versões da foto de cada uma, todas na pasta `imagens/`:
+
+| Arquivo | Onde aparece | Tamanho |
+|---|---|---|
+| `rafaela-card.webp` e `fran-card.webp` | Card de "Quem vai te acompanhar" | 480 × 640 px (retrato 3:4, meio corpo) |
+| `rafaela-rosto.webp` e `fran-rosto.webp` | Bolinhas com o rosto no topo da página | 160 × 160 px (quadrado, só o rosto) |
+
+Para trocar:
+
+1. Recorte a foto no tamanho da tabela. No card, deixe o rosto no terço de cima.
 2. Converta para **WebP** no site [squoosh.app](https://squoosh.app): arraste a foto, escolha "WebP" à direita, qualidade por volta de 75, e baixe.
-3. Salve na pasta `imagens/`, com um nome simples e sem acento, por exemplo `rafaela.webp`.
-4. O jeito mais fácil de trocar uma foto é salvar a nova com **o mesmo nome** da antiga (`rafaela.webp` ou `fran.webp`) e substituir o arquivo na pasta `imagens/`. Aí não precisa mexer no `index.html`.
-
-Para colocar uma foto em outro lugar, use esta linha no `index.html`:
-
-```html
-<img class="foto-real" src="imagens/nome-da-foto.webp" alt="descrição da foto" width="800" height="1200" loading="lazy">
-```
+3. Salve com **o mesmo nome** do arquivo que vai substituir e troque o arquivo na pasta `imagens/`. Não precisa mexer no `index.html`.
 
 ### Fotos de resultados (antes e depois)
 

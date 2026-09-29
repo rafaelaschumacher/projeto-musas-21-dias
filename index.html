@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Projeto Musas 21</title>
-  <meta name="description" content="Plano alimentar, treino e duas profissionais te acompanhando todos os dias. Em casa ou na academia.">
+  <meta name="description" content="21 dias para chegar ao verão se sentindo mais confiante no biquíni. Plano alimentar, treino e duas profissionais te acompanhando todos os dias.">
   <meta name="theme-color" content="#5C1A2B">
   <link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=Fraunces:ital,opsz,wght@1,9..144,400..800&display=swap">
 
   <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="estilos/base.css">
@@ -21,7 +21,7 @@
 </head>
 <body>
 
-  <!-- ===================== SEÇÃO 1: FAIXA DO TOPO ===================== -->
+  <!-- ===================== FAIXA DO TOPO ===================== -->
   <div class="faixa" id="faixa" role="region" aria-label="Status das inscrições">
     <p class="faixa__texto">
       <span id="faixa-texto">Inscrições abertas até 22/10, às 23h59. O desafio começa em 26/10.</span>
@@ -31,15 +31,21 @@
 
   <main>
 
-    <!-- ===================== SEÇÃO 2: HERO ===================== -->
+    <!-- ===================== HERO ===================== -->
     <section class="secao secao--porcelana hero" id="hero">
-      <div class="hero__sol" aria-hidden="true"></div>
       <div class="container hero__grade">
         <div class="hero__texto">
           <p class="logo" aria-label="Musas 21"><span class="logo__musas">Musas</span><span class="logo__21">21</span></p>
           <h1 class="titulo titulo--hero"><em>21</em> dias para chegar ao verão se sentindo mais <em>confiante no biquíni.</em></h1>
           <p class="hero__sub">Plano alimentar, treino e duas profissionais te acompanhando todos os dias. Feito para mulheres que cansaram de recomeçar toda segunda-feira.</p>
-          <ul class="selos" aria-label="Resumo do desafio">
+          <p class="hero__autoras">
+            <span class="hero__rostos" aria-hidden="true">
+              <img src="imagens/rafaela-rosto.webp" alt="" width="160" height="160">
+              <img src="imagens/fran-rosto.webp" alt="" width="160" height="160">
+            </span>
+            <span>Com <strong>Rafaela Schumacher</strong>, nutricionista, e <strong>Francielli Candido</strong>, treinadora</span>
+          </p>
+          <ul class="hero__dados" aria-label="Resumo do desafio">
             <li>21 dias</li>
             <li>Casa ou academia</li>
             <li>Começa 26/10</li>
@@ -64,10 +70,10 @@
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 3: IDENTIFICAÇÃO ===================== -->
+    <!-- ===================== IDENTIFICAÇÃO ===================== -->
     <section class="secao secao--rose identificacao">
       <div class="container container--estreito">
-        <h2 class="titulo">Você já viveu <em>isso?</em></h2>
+        <h2 class="titulo">Você já viveu isso?</h2>
         <p class="identificacao__semana">Segunda-feira, dieta nova.<br>Quarta, cansada.<br>Sexta, desandou.<br>Domingo, promessa de recomeçar.</p>
         <p class="identificacao__gaveta">E o biquíni continua na gaveta.</p>
         <p class="texto">Você não está sozinha. E o problema nunca foi força de vontade.</p>
@@ -79,94 +85,113 @@
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 4: O QUE VOCÊ RECEBE ===================== -->
+    <!-- ===================== O QUE VOCÊ RECEBE ===================== -->
     <section class="secao secao--porcelana">
       <div class="container">
-        <h2 class="titulo">O que você <em>recebe</em></h2>
-        <div class="grade grade--4">
-          <article class="card">
-            <svg class="icone icone--card" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/></svg>
-            <h3 class="card__titulo">Plano alimentar estratégico para 21 dias</h3>
-            <p class="card__texto">Com opções de substituição em cada refeição.</p>
-          </article>
-          <article class="card">
-            <svg class="icone icone--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6v12M3.5 9v6M17 6v12M20.5 9v6M7 12h10"/></svg>
-            <h3 class="card__titulo">Protocolo de treino de 3 semanas</h3>
-            <p class="card__texto">Versão casa e versão academia, feito para iniciante, com progressão semana a semana.</p>
-          </article>
-          <article class="card">
-            <svg class="icone icone--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6a2 2 0 0 1 2-2H11v16H5.5a2 2 0 0 1-2-2z"/><path d="M20.5 6a2 2 0 0 0-2-2H13v16h5.5a2 2 0 0 0 2-2z"/></svg>
-            <h3 class="card__titulo">Guias práticos</h3>
-            <p class="card__texto">Mercado, suplementação e refeição fora. Tudo o que você precisa para não sair do plano no fim de semana.</p>
-          </article>
-          <article class="card">
-            <svg class="icone icone--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2.5 2.5 0 0 1 2.5-2.5h8a2.5 2.5 0 0 1 2.5 2.5v5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3v-3.3a2.5 2.5 0 0 1-1.5-2.2z"/><path d="M19.5 9.5a1.5 1.5 0 0 1 1 1.4v5a2.5 2.5 0 0 1-1.5 2.3V20l-3-2.5h-3.5"/></svg>
-            <h3 class="card__titulo">Comunidade das Musas</h3>
-            <p class="card__texto">Grupo no WhatsApp com interação diária da nutricionista e da treinadora, lives semanais e mulheres começando junto com você.</p>
-          </article>
-        </div>
+        <h2 class="titulo">O que você recebe</h2>
+        <ol class="entregas">
+          <li class="entrega">
+            <span class="entrega__numero" aria-hidden="true">01</span>
+            <div>
+              <h3 class="item-titulo">Plano alimentar estratégico para 21 dias</h3>
+              <p>Com opções de substituição em cada refeição.</p>
+            </div>
+          </li>
+          <li class="entrega">
+            <span class="entrega__numero" aria-hidden="true">02</span>
+            <div>
+              <h3 class="item-titulo">Protocolo de treino de 3 semanas</h3>
+              <p>Versão casa e versão academia, feito para iniciante, com progressão semana a semana.</p>
+            </div>
+          </li>
+          <li class="entrega">
+            <span class="entrega__numero" aria-hidden="true">03</span>
+            <div>
+              <h3 class="item-titulo">Guias práticos</h3>
+              <p>Mercado, suplementação e refeição fora. Tudo o que você precisa para não sair do plano no fim de semana.</p>
+            </div>
+          </li>
+          <li class="entrega">
+            <span class="entrega__numero" aria-hidden="true">04</span>
+            <div>
+              <h3 class="item-titulo">Comunidade das Musas</h3>
+              <p>Grupo no WhatsApp com interação diária da nutricionista e da treinadora, lives semanais e mulheres começando junto com você.</p>
+            </div>
+          </li>
+        </ol>
         <div class="acao">
           <a class="botao botao--principal" href="#" data-cta="recebe" data-texto-aberto="Quero meu plano e meu treino">Quero meu plano e meu treino</a>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 9: AS 3 SEMANAS ===================== -->
+    <!-- ===================== AS 3 SEMANAS ===================== -->
     <section class="secao secao--rose">
       <div class="container">
         <p class="frase-destaque">Não precisa ser perfeito. Precisa ser <em>sustentável.</em></p>
-        <h2 class="titulo">As <em>3</em> semanas</h2>
-        <ol class="grade grade--3 semanas">
-          <li class="card semana">
-            <span class="semana__numero" aria-hidden="true">01</span>
-            <p class="rotulo">Semana 1</p>
-            <h3 class="semana__nome">Base.</h3>
-            <p class="card__texto">Organizar a rotina, montar o prato certo, desinchar e aprender os movimentos.</p>
+        <h2 class="titulo">As 3 semanas</h2>
+        <ol class="semanas">
+          <li class="semana">
+            <span class="semana__numero"><span class="sr-only">Semana </span>01</span>
+            <div>
+              <h3 class="item-titulo semana__nome">Base.</h3>
+              <p>Organizar a rotina, montar o prato certo, desinchar e aprender os movimentos.</p>
+            </div>
           </li>
-          <li class="card semana">
-            <span class="semana__numero" aria-hidden="true">02</span>
-            <p class="rotulo">Semana 2</p>
-            <h3 class="semana__nome">Ajuste.</h3>
-            <p class="card__texto">Fim de semana, refeição fora e mais intensidade no treino. É aqui que a maioria desiste sozinha. Aqui, você tem a gente.</p>
+          <li class="semana">
+            <span class="semana__numero"><span class="sr-only">Semana </span>02</span>
+            <div>
+              <h3 class="item-titulo semana__nome">Ajuste.</h3>
+              <p>Fim de semana, refeição fora e mais intensidade no treino. É aqui que a maioria desiste sozinha. Aqui, você tem a gente.</p>
+            </div>
           </li>
-          <li class="card semana">
-            <span class="semana__numero" aria-hidden="true">03</span>
-            <p class="rotulo">Semana 3</p>
-            <h3 class="semana__nome">Constância.</h3>
-            <p class="card__texto">Foco em definição e em manter o ritmo depois do desafio.</p>
+          <li class="semana">
+            <span class="semana__numero"><span class="sr-only">Semana </span>03</span>
+            <div>
+              <h3 class="item-titulo semana__nome">Constância.</h3>
+              <p>Foco em definição e em manter o ritmo depois do desafio.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 8: QUEM VAI TE ACOMPANHAR ===================== -->
+    <!-- ===================== QUEM VAI TE ACOMPANHAR ===================== -->
     <section class="secao secao--porcelana">
       <div class="container">
-        <h2 class="titulo">Quem vai te <em>acompanhar</em></h2>
-        <div class="grade grade--2">
-          <article class="card pessoa">
-            <img class="foto-real" src="imagens/rafaela.webp" alt="Rafaela Schumacher no palco de uma competição de fisiculturismo" width="800" height="1200" loading="lazy" decoding="async">
-            <h3 class="pessoa__nome">Rafaela Schumacher</h3>
-            <p class="rotulo pessoa__registro">CRN-10 15514</p>
-            <p class="card__texto">Nutricionista com atuação na nutrição esportiva e clínica, com foco em emagrecimento, recomposição corporal, saúde da mulher e comportamento alimentar.</p>
-            <p class="card__texto">Ex-atleta bikini, 7 vezes campeã no fisiculturismo. Sabe na prática o que é ter foco e estratégia para mudar o corpo. Hoje, ajuda mulheres comuns a chegar lá sem sofrimento e sem extremos.</p>
+        <h2 class="titulo">Quem vai te acompanhar</h2>
+        <div class="pessoas">
+          <article class="pessoa">
+            <img class="pessoa__foto" src="imagens/rafaela-card.webp" alt="Rafaela Schumacher no palco de uma competição de fisiculturismo" width="480" height="640" loading="lazy" decoding="async">
+            <div class="pessoa__cabecalho">
+              <h3 class="pessoa__nome">Rafaela Schumacher</h3>
+              <p class="rotulo pessoa__registro">CRN-10 15514</p>
+            </div>
+            <div class="pessoa__bio">
+              <p>Nutricionista com atuação na nutrição esportiva e clínica, com foco em emagrecimento, recomposição corporal, saúde da mulher e comportamento alimentar.</p>
+              <p>Ex-atleta bikini, 7 vezes campeã no fisiculturismo. Sabe na prática o que é ter foco e estratégia para mudar o corpo. Hoje, ajuda mulheres comuns a chegar lá sem sofrimento e sem extremos.</p>
+            </div>
           </article>
-          <article class="card pessoa">
-            <img class="foto-real" src="imagens/fran.webp" alt="Francielli Candido, treinadora do Musas 21" width="800" height="1200" loading="lazy" decoding="async">
-            <h3 class="pessoa__nome">Francielli Candido</h3>
-            <p class="card__texto">Treinadora e coach fitness. Desenvolve treinos para mulheres que querem definir o corpo e se sentir bem com ele. No Musas 21, é quem monta cada treino para caber na sua rotina, em casa ou na academia.</p>
+          <article class="pessoa">
+            <img class="pessoa__foto" src="imagens/fran-card.webp" alt="Francielli Candido, treinadora do Musas 21" width="480" height="640" loading="lazy" decoding="async">
+            <div class="pessoa__cabecalho">
+              <h3 class="pessoa__nome">Francielli Candido</h3>
+            </div>
+            <div class="pessoa__bio">
+              <p>Treinadora e coach fitness. Desenvolve treinos para mulheres que querem definir o corpo e se sentir bem com ele. No Musas 21, é quem monta cada treino para caber na sua rotina, em casa ou na academia.</p>
+            </div>
           </article>
         </div>
-        <p class="texto texto--centro juntas">Nutri e treinadora no mesmo grupo. Sua dieta e seu treino finalmente alinhados.</p>
+        <p class="juntas">Nutri e treinadora no mesmo grupo. Sua dieta e seu treino finalmente alinhados.</p>
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 6: RESULTADOS (antes e depois) ===================== -->
+    <!-- ===================== RESULTADOS (antes e depois) ===================== -->
     <section class="secao secao--rose">
       <div class="container">
         <p class="rotulo resultados__rotulo">Pacientes da Rafaela e alunas da Francielli</p>
         <h2 class="titulo">Resultados que queremos ver em <em>você também</em></h2>
-        <div class="grade grade--3 resultados" tabindex="0" aria-label="Resultados de pacientes. Deslize para ver mais.">
+        <div class="resultados" tabindex="0" aria-label="Resultados de pacientes. Deslize para ver mais.">
           <figure class="resultado">
             <img src="imagens/resultados/resultado-02.webp" alt="Antes e depois de uma paciente da Rafaela ou aluna da Francielli" width="1000" height="1000" loading="lazy" decoding="async">
           </figure>
@@ -202,40 +227,49 @@
     <!-- ===================== COMO FUNCIONA ===================== -->
     <section class="secao secao--porcelana">
       <div class="container">
-        <h2 class="titulo">Como <em>funciona</em></h2>
-        <ol class="grade grade--5 passos">
-          <li class="card passo">
+        <h2 class="titulo">Como funciona</h2>
+        <ol class="passos">
+          <li class="passo">
             <span class="passo__numero" aria-hidden="true">1</span>
-            <h3 class="card__titulo">Garanta sua vaga</h3>
-            <p class="card__texto">Faça sua inscrição até 22/10, às 23h59.</p>
+            <div>
+              <h3 class="item-titulo">Garanta sua vaga</h3>
+              <p>Faça sua inscrição até 22/10, às 23h59.</p>
+            </div>
           </li>
-          <li class="card passo">
+          <li class="passo">
             <span class="passo__numero" aria-hidden="true">2</span>
-            <h3 class="card__titulo">Receba o acesso</h3>
-            <p class="card__texto">Depois da compra, você recebe o link por e-mail.</p>
+            <div>
+              <h3 class="item-titulo">Receba o acesso</h3>
+              <p>Depois da compra, você recebe o link por <span class="sem-quebra">e-mail</span>.</p>
+            </div>
           </li>
-          <li class="card passo">
+          <li class="passo">
             <span class="passo__numero" aria-hidden="true">3</span>
-            <h3 class="card__titulo">Entre na comunidade</h3>
-            <p class="card__texto">O acesso à área das alunas e à Comunidade das Musas é liberado entre 23 e 25/10.</p>
+            <div>
+              <h3 class="item-titulo">Entre na comunidade</h3>
+              <p>O acesso à área das alunas e à Comunidade das Musas é liberado entre 23 e 25/10.</p>
+            </div>
           </li>
-          <li class="card passo">
+          <li class="passo">
             <span class="passo__numero" aria-hidden="true">4</span>
-            <h3 class="card__titulo">Responda a triagem</h3>
-            <p class="card__texto">Na entrada, você responde uma triagem. Se o seu caso precisar de atenção individual, a gente te orienta.</p>
+            <div>
+              <h3 class="item-titulo">Responda a triagem</h3>
+              <p>Na entrada, você responde uma triagem. Se o seu caso precisar de atenção individual, a gente te orienta.</p>
+            </div>
           </li>
-          <li class="card passo">
+          <li class="passo">
             <span class="passo__numero" aria-hidden="true">5</span>
-            <h3 class="card__titulo">Comece na segunda, 26/10</h3>
-            <p class="card__texto">São 21 dias com plano alimentar, treino e as duas profissionais com você.</p>
+            <div>
+              <h3 class="item-titulo">Comece na segunda, 26/10</h3>
+              <p>São 21 dias com plano alimentar, treino e as duas profissionais com você.</p>
+            </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 7: VALOR ===================== -->
+    <!-- ===================== VALOR ===================== -->
     <section class="secao secao--bordo valor">
-      <div class="valor__sol" aria-hidden="true"></div>
       <div class="container container--estreito">
         <h2 class="titulo">Tudo isso por <em>menos de R$ 4</em> por dia</h2>
         <p class="texto">Plano alimentar, treino, guias práticos e duas profissionais no grupo com você por 21 dias.</p>
@@ -246,20 +280,20 @@
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 10: GARANTIA (liga no config.js) ===================== -->
+    <!-- ===================== GARANTIA (liga no config.js) ===================== -->
     <section class="secao secao--porcelana garantia" id="garantia" hidden>
       <div class="container container--estreito">
         <div class="card garantia__card">
-          <svg class="icone icone--card" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6v5.5c0 4.2 2.9 7.6 7 9 4.1-1.4 7-4.8 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          <svg class="icone garantia__icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5 6v5.5c0 4.2 2.9 7.6 7 9 4.1-1.4 7-4.8 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
           <p class="garantia__texto" id="garantia-texto"></p>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 11: PERGUNTAS FREQUENTES ===================== -->
+    <!-- ===================== PERGUNTAS FREQUENTES ===================== -->
     <section class="secao secao--rose">
       <div class="container container--estreito">
-        <h2 class="titulo">Perguntas <em>frequentes</em></h2>
+        <h2 class="titulo">Perguntas frequentes</h2>
         <div class="faq" id="faq">
           <details class="faq__item">
             <summary><span>Nunca treinei na vida. Serve pra mim?</span><svg class="icone faq__icone" viewBox="0 0 24 24" aria-hidden="true"><path class="faq__vertical" d="M12 6v12"/><path d="M6 12h12"/></svg></summary>
@@ -283,7 +317,7 @@
           </details>
           <details class="faq__item faq__item--extra">
             <summary><span>Como recebo o acesso?</span><svg class="icone faq__icone" viewBox="0 0 24 24" aria-hidden="true"><path class="faq__vertical" d="M12 6v12"/><path d="M6 12h12"/></svg></summary>
-            <p>Depois da compra, você recebe o link por e-mail.</p>
+            <p>Depois da compra, você recebe o link por <span class="sem-quebra">e-mail</span>.</p>
           </details>
           <details class="faq__item faq__item--extra">
             <summary><span>Por quanto tempo tenho acesso?</span><svg class="icone faq__icone" viewBox="0 0 24 24" aria-hidden="true"><path class="faq__vertical" d="M12 6v12"/><path d="M6 12h12"/></svg></summary>
@@ -302,7 +336,7 @@
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 12: ENCERRAMENTO ===================== -->
+    <!-- ===================== ENCERRAMENTO ===================== -->
     <section class="secao secao--porcelana encerramento">
       <div class="container container--estreito">
         <p class="encerramento__abre">O verão vai chegar de qualquer jeito.</p>
@@ -313,7 +347,7 @@
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO 13: ACOMPANHAMENTO INDIVIDUAL ===================== -->
+    <!-- ===================== ACOMPANHAMENTO INDIVIDUAL ===================== -->
     <section class="secao secao--rose secao--compacta">
       <div class="container container--estreito individual">
         <p>Quer um plano individual, feito para a sua rotina? Conheça o acompanhamento nutricional da Rafaela.</p>
@@ -325,7 +359,7 @@
 
   </main>
 
-  <!-- ===================== SEÇÃO 14: RODAPÉ ===================== -->
+  <!-- ===================== RODAPÉ ===================== -->
   <footer class="rodape">
     <div class="container rodape__grade">
       <p class="logo logo--rodape" aria-label="Musas 21"><span class="logo__musas">Musas</span><span class="logo__21">21</span></p>
