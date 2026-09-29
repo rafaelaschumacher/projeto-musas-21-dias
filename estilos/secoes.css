@@ -82,15 +82,16 @@
 
 /* ---------- Hero ---------- */
 
-.hero { padding-top: 32px; }
+.hero { padding-top: 20px; }
 
+/* Celular: o vídeo vem primeiro, depois o texto e a oferta */
 .hero__grade {
   display: grid;
-  gap: 32px;
+  gap: 28px;
   grid-template-areas:
+    "video"
     "texto"
-    "oferta"
-    "video";
+    "oferta";
 }
 
 .hero__texto { grid-area: texto; }
