@@ -220,6 +220,7 @@
 
   function aplicarLinkIndividual() {
     var link = document.getElementById("link-individual");
+    if (!link) return;
     if (pendente(C.linkAcompanhamentoIndividual)) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
