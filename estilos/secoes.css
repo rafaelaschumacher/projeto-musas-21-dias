@@ -274,6 +274,35 @@
   color: var(--bordo);
 }
 
+.identificacao__gaveta {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: -0.4em 0 1.6em;
+}
+
+.identificacao__virada {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(1.9rem, 7.5vw, 2.75rem);
+  line-height: 1;
+  margin: 0.2em 0 0.6em;
+}
+.identificacao__virada em { color: var(--bordo); font-weight: 800; }
+
+.identificacao__repetir {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--bordo);
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 1.2em 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--bordo);
+}
+
 .identificacao__fecho {
   font-weight: 700;
   font-size: 1.125rem;
@@ -384,6 +413,10 @@
 }
 
 .valor .container { position: relative; }
+.valor__prazo { color: var(--rose); margin-top: 16px; } /* rosé sobre bordô: 8,60:1 */
+.valor__destaque { margin-top: 32px; }
+
+.pessoa__registro { color: var(--grafite-suave); margin: -0.2em 0 0.8em; }
 
 /* ---------- 8. Quem vai te acompanhar ---------- */
 
