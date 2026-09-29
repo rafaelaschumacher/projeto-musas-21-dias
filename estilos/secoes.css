@@ -413,6 +413,17 @@
 }
 
 .valor .container { position: relative; }
+
+.resultados__rotulo { color: var(--bordo); margin-bottom: 10px; }
+.resultados__aviso { margin: 16px 0 0; max-width: 60ch; }
+
+.vsl__chamada {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin: 0 auto 12px;
+  max-width: 380px;
+}
 .valor__prazo { color: var(--rose); margin-top: 16px; } /* rosé sobre bordô: 8,60:1 */
 .valor__destaque { margin-top: 32px; }
 

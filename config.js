@@ -25,7 +25,7 @@ window.MUSAS_CONFIG = {
   faixaEncerrado: "Inscrições encerradas",
   botaoListaEspera: "Entrar na lista de espera",
   botaoEncerrado: "Entrar na lista da próxima turma",
-  botaoBarraFixaAberto: "Quero entrar no Musas 21",
+  botaoBarraFixaAberto: "Quero entrar",
 
   /* ---------- VSL (vídeo) ----------
      embedVsl: cole entre as crases (`) o código de incorporação do player.
