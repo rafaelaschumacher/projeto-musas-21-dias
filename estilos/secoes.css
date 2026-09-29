@@ -12,7 +12,7 @@
 .secao--compacta { padding: 40px 0; }
 
 .secao--porcelana { background: var(--porcelana); }
-.secao--rose { background: var(--rose); }
+.secao--rose { background: var(--blush); }
 
 /* Sobre rosé, texto secundário fica em grafite (grafite-suave não passa 4,5:1) */
 .secao--rose .texto-pequeno { color: var(--grafite); }

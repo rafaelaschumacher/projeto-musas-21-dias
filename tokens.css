@@ -7,7 +7,8 @@
   /* Cores */
   --bordo: #5C1A2B;          /* principal: botões, títulos de destaque, ícones, faixa do topo */
   --bordo-escuro: #431220;   /* hover e estado pressionado dos botões */
-  --rose: #EBCDC6;           /* apoio: seções alternadas e destaques sobre bordô */
+  --rose: #EBCDC6;           /* apoio: destaques sobre bordô */
+  --blush: #F4E6E1;          /* fundo das seções alternadas */
   --porcelana: #F7F1EC;      /* fundo geral */
   --branco: #FFFFFF;         /* cards */
   --grafite: #221C1E;        /* texto principal */
