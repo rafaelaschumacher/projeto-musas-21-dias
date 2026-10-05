@@ -181,6 +181,7 @@
 
     var codigo = (C.embedVsl || "").trim();
     if (!codigo) return;
+    vsl.classList.remove("vsl--foto");
 
     var conteudo = document.createElement("div");
     conteudo.className = "vsl__conteudo";

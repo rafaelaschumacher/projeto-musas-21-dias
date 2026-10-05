@@ -244,6 +244,18 @@
 
 .vsl__conteudo { position: absolute; inset: 0; }
 
+/* Foto das duas no lugar do vídeo */
+.vsl.vsl--foto {
+  aspect-ratio: 960 / 1286;
+  max-width: min(460px, calc(72svh * 960 / 1286));
+  background: var(--borda);
+}
+.hero__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .vsl__placeholder {
   position: absolute;
   inset: 0;
