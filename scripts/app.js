@@ -372,8 +372,10 @@
   function evitarViuva(el) {
     var mudancas = trocarEspacos(el, function (t) {
       var fim = t.replace(/\s+$/, "");
-      var p = fim.lastIndexOf(" ");
-      return p > 0 ? [p] : [];
+      // último espaço (comum ou inquebrável) antes da última palavra;
+      // se já for inquebrável, não junta mais nada (a função pode rodar várias vezes)
+      var p = Math.max(fim.lastIndexOf(" "), fim.lastIndexOf(NBSP));
+      return p > 0 && fim.charAt(p) === " " ? [p] : [];
     });
     // se as duas últimas palavras não couberem juntas, desfaz
     if (mudancas && el.scrollWidth > el.clientWidth + 1) {
