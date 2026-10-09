@@ -867,3 +867,13 @@ body.com-barra .cookies { bottom: 84px; }
   pointer-events: none;
 }
 @media (min-width: 900px) { .selo-teste { bottom: 12px; } }
+
+/* Textos curtos centralizados: linhas equilibradas */
+.encerramento .texto,
+.encerramento__abre,
+.valor .texto,
+.faixa__texto,
+.oferta__parcela,
+.oferta__nota,
+.hero__parcela,
+.juntas { text-wrap: balance; }

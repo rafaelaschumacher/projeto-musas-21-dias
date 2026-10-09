@@ -316,15 +316,90 @@
 
   /* ---------- Início ---------- */
 
+  /* ---------- Quebra de linha: sem palavra curta no fim da linha e sem
+     palavra sozinha na última linha ---------- */
+
+  var NBSP = "\u00a0";
+  var ALVOS = "h1, h2, h3, p, li, summary, figcaption, .botao, .oferta__lista span";
+  // palavras de até 2 letras, números curtos e "R$" ficam presos à palavra seguinte
+  var CURTA = /(^|[\s\u00a0(])([0-9A-Za-zÀ-ÿ]{1,2}|R\$) /g;
+
+  // Junta os pedaços de texto do elemento (inclusive dentro de <em>, <strong>...)
+  // e troca, no texto inteiro, os espaços escolhidos por espaço inquebrável.
+  function trocarEspacos(el, escolher) {
+    var nos = [];
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!n.parentNode.closest(".faixa__contagem")) nos.push(n);
+    }
+    var texto = nos.map(function (x) { return x.data; }).join("");
+    var posicoes = escolher(texto);
+    if (!posicoes.length) return null;
+    var mudancas = [];
+    posicoes.forEach(function (pos) {
+      var inicio = 0;
+      for (var i = 0; i < nos.length; i++) {
+        var fim = inicio + nos[i].data.length;
+        if (pos < fim) {
+          var off = pos - inicio;
+          var antes = nos[i].data;
+          if (antes.charAt(off) === " ") {
+            nos[i].data = antes.slice(0, off) + NBSP + antes.slice(off + 1);
+            mudancas.push({ no: nos[i], antes: antes });
+          }
+          return;
+        }
+        inicio = fim;
+      }
+    });
+    return mudancas;
+  }
+
+  function prenderPalavrasCurtas(el) {
+    trocarEspacos(el, function (t) {
+      var pos = [];
+      var re = /(^|[\s\u00a0(])([0-9A-Za-zÀ-ÿ]{1,2}|R\$) /g;
+      var m;
+      while ((m = re.exec(t))) {
+        pos.push(m.index + m[0].length - 1);
+        re.lastIndex = m.index + m[0].length - 1; // permite "e a casa"
+      }
+      return pos;
+    });
+  }
+
+  function evitarViuva(el) {
+    var mudancas = trocarEspacos(el, function (t) {
+      var fim = t.replace(/\s+$/, "");
+      var p = fim.lastIndexOf(" ");
+      return p > 0 ? [p] : [];
+    });
+    // se as duas últimas palavras não couberem juntas, desfaz
+    if (mudancas && el.scrollWidth > el.clientWidth + 1) {
+      mudancas.forEach(function (m) { m.no.data = m.antes; });
+    }
+  }
+
+  function arrumarQuebras() {
+    Array.prototype.forEach.call(document.querySelectorAll(ALVOS), function (el) {
+      if (el.querySelector("p, li, h2, h3")) return;
+      prenderPalavrasCurtas(el);
+      if ((el.textContent.match(/\S+/g) || []).length >= 3) evitarViuva(el);
+    });
+  }
+
   function aplicarEstado() {
     aplicarFaixa();
     aplicarBotoes();
+    arrumarQuebras();
   }
 
   montarVsl();
   aplicarEstado();
   atrasarPrimeiroBotao();
   aplicarGarantia();
+  arrumarQuebras();
   aplicarLinkIndividual();
   ativarBarraFixa();
   iniciarCookies();

@@ -30,7 +30,7 @@ img, svg, video, iframe { display: block; max-width: 100%; }
 
 h1, h2, h3, p { margin: 0; }
 p + p { margin-top: 0.9em; }
-p { text-wrap: pretty; }
+p, li, summary { text-wrap: pretty; }
 
 a { color: var(--bordo); }
 
