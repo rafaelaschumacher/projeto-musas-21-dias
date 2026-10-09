@@ -1,0 +1,218 @@
+/* =========================================================
+   PRÉVIA PREMIUM — camada aplicada por cima de base.css e secoes.css
+   1. Seções escuras  2. Caixa de oferta  3. Sobretítulos
+   4. Profundidade suave  7. Títulos em Archivo negrito
+   ========================================================= */
+
+:root {
+  --noite: #1F1719;                 /* fundo das seções escuras */
+  --noite-texto: #E9DDD7;           /* texto corrido sobre noite: 12,6:1 */
+  --sombra: 0 1px 2px rgba(34, 28, 30, 0.05), 0 14px 32px -14px rgba(34, 28, 30, 0.22);
+  --sombra-botao: 0 12px 24px -12px rgba(92, 26, 43, 0.65);
+}
+
+/* ---------- 7. Títulos: Archivo negrito, destaque em Fraunces Italic ---------- */
+
+.titulo,
+.identificacao__virada,
+.frase-destaque,
+.encerramento__destaque {
+  font-family: var(--fonte-sans);
+  font-style: normal;
+  font-weight: 800;
+  font-variation-settings: normal;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+}
+.titulo { font-size: clamp(1.875rem, 7vw, 2.875rem); }
+.titulo--hero { font-size: clamp(2.25rem, 9.4vw, 4rem); letter-spacing: -0.035em; line-height: 1.02; }
+
+.titulo em,
+.identificacao__virada em,
+.frase-destaque em,
+.encerramento__destaque em {
+  font-family: var(--fonte-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.01em;
+  font-size: 1.06em;
+  color: var(--bordo);
+}
+
+.identificacao__repetir {
+  font-family: var(--fonte-sans);
+  font-style: normal;
+  font-weight: 700;
+  font-variation-settings: normal;
+  font-size: 1.375rem;
+  letter-spacing: -0.015em;
+}
+
+/* ---------- 3. Sobretítulos ---------- */
+
+.sobretitulo {
+  margin-bottom: 12px;
+  font-family: var(--fonte-sans);
+  font-weight: 700;
+  font-stretch: 87.5%;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: var(--bordo);            /* bordô sobre claro: 11,5:1 */
+}
+
+/* ---------- 1. Seções escuras ---------- */
+
+.secao--noite {
+  background: var(--noite);
+  color: var(--noite-texto);
+}
+.secao--noite .titulo,
+.secao--noite .identificacao__virada,
+.secao--noite .encerramento__abre,
+.secao--noite .identificacao__semana { color: var(--porcelana); }
+.secao--noite .titulo em,
+.secao--noite .identificacao__virada em,
+.secao--noite .encerramento__destaque em { color: var(--bronze); }   /* 5,5:1 */
+.secao--noite .sobretitulo { color: var(--bronze); }
+.secao--noite .identificacao__gaveta,
+.secao--noite .identificacao__repetir { color: var(--rose); }       /* 11,8:1 */
+.secao--noite .identificacao__fecho { border-top-color: rgba(247, 241, 236, 0.18); color: var(--porcelana); }
+.secao--noite .texto-pequeno { color: var(--noite-texto); }
+.secao--noite :focus-visible { outline-color: var(--porcelana); }
+
+/* ---------- 2. Caixa de oferta ---------- */
+
+.valor .titulo { margin-bottom: 28px; }
+
+.oferta {
+  margin: 0 auto;
+  max-width: 440px;
+  background: var(--porcelana);
+  color: var(--grafite);
+  border-radius: 24px;
+  padding: 16px 20px 24px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.oferta__foto {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 18%;
+  border-radius: 16px;
+  background: var(--borda);
+}
+
+.oferta__logo { margin: 20px auto 18px; font-size: 2rem; }
+
+.oferta__lista {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+}
+.oferta__lista li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+.oferta__lista .icone {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  padding: 5px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: var(--bronze);
+  color: var(--branco);
+  stroke-width: 3;
+}
+
+.oferta__preco {
+  font-family: var(--fonte-sans);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--grafite);
+  font-variant-numeric: tabular-nums;
+}
+.oferta__parcela { margin: 6px 0 20px; font-size: 0.9375rem; color: var(--grafite-suave); }
+.oferta .botao { width: 100%; }
+.oferta__nota { margin-top: 12px; font-size: 0.8125rem; color: var(--grafite-suave); }
+.oferta__prazo { margin-top: 4px; font-size: 0.8125rem; font-weight: 600; color: var(--bordo); }
+
+/* ---------- 4. Profundidade suave ---------- */
+
+.botao--principal { box-shadow: var(--sombra-botao); }
+.botao--secundario { box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.5); }
+@media (max-width: 899px) {
+  .acao .botao,
+  .encerramento .botao { width: 100%; }
+}
+
+.vsl.vsl--foto,
+.semana,
+.pessoa,
+.resultado { box-shadow: var(--sombra); border-color: transparent; }
+
+/* O que você recebe: lista dentro de um card */
+.entregas {
+  background: var(--branco);
+  border-radius: var(--raio-bloco);
+  padding: 4px 20px;
+  box-shadow: var(--sombra);
+  border-bottom: 0;
+}
+.entrega:first-child { border-top: 0; }
+.entrega__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blush);
+  color: var(--bordo);
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+@media (min-width: 900px) {
+  .entregas { padding: 8px 32px; column-gap: 48px; }
+  .entrega:nth-child(2) { border-top: 0; }
+}
+
+/* FAQ em cards */
+.faq { border-top: 0; display: grid; gap: 10px; }
+.faq__item {
+  border-bottom: 0;
+  background: var(--branco);
+  border-radius: 14px;
+  padding: 0 18px;
+  box-shadow: var(--sombra);
+}
+.faq__icone {
+  width: 16px;
+  height: 16px;
+  padding: 5px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  background: var(--blush);
+}
+
+/* Passos: número preenchido */
+.passo__numero { background: var(--bordo); color: var(--porcelana); border-color: var(--bordo); }
